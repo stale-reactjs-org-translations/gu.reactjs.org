@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: ઘટક આધારિત
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+ઇન્કેપ્સ્યુલેટેડ ઘટકો બનાવો જે તેમના પોતાના રાજ્યનું સંચાલન કરે છે, પછી તેમને જટિલ UI બનાવવા માટે કંપોઝ કરો.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+કારણ કે ઘટક તર્ક ટેમ્પલેટ્સને બદલે જાવાસ્ક્રિપ્ટમાં લખાયેલું છે, તમે સરળતાથી તમારી એપ્લિકેશન દ્વારા સમૃદ્ધ ડેટા પસાર કરી શકો છો અને રાજ્યને DOM માંથી બહાર રાખી શકો છો.

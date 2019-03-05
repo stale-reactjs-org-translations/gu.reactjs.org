@@ -1,8 +1,8 @@
 ---
-title: Declarative
+title: ઘોષણાત્મક
 order: 0
 ---
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+પ્રતિક્રિયા એ ઇન્ટરેક્ટિવ UI બનાવવા માટે પીડાદાયક બનાવે છે. તમારી એપ્લિકેશનમાં પ્રત્યેક રાજ્ય માટે ડિઝાઇન સરળ દૃશ્યો, અને જ્યારે તમારો ડેટા બદલાય ત્યારે રીક્ટ અસરકારક રીતે અપડેટ અને યોગ્ય ઘટકો રજૂ કરશે.
 
-Declarative views make your code more predictable and easier to debug.
+ઘોષણાત્મક દૃશ્યો તમારા કોડને વધુ અનુમાનિત અને ડીબગ કરવા માટે સરળ બનાવે છે.
