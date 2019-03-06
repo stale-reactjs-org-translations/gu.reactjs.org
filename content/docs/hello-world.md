@@ -1,12 +1,12 @@
 ---
 id: hello-world
-title: Hello World
+title: હેલો વર્લ્ડ
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+સૌથી નાનો રીએક્ટ ઉદાહરણ આના જેવો દેખાય છે.
 
 ```js
 ReactDOM.render(
@@ -15,36 +15,36 @@ ReactDOM.render(
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+તે પેજ પર "Hello, world!" દર્શાવે છે.
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+ઑનલાઇન એડિટર ખોલવા માટે ઉપરની લિંકને ક્લિક કરો. કેટલાક ફેરફારો કરો, અને જુઓ કે કેવી રીતે તે આઉટપુટ બદલશે. આ ગાઇડમાં મોટાભાગના પેજમાં આના જેવા એડિટેબલ ઉદાહરણો હશે.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## ગાઇડ કેવી રીતે વાંચો {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+આ ગાઇડમાં, આપણે રિએક્ટ એપ્સના બિલ્ડિંગ બ્લોક્સ વિશે જાણસુ: એલિમેન્ટ્સ અને કોમ્પોનેન્ટ્સ. એકવાર તમે તેમને શીખ્યા પછી, તમે નાના રિયુઝેબલ કોમ્પોનેન્ટ્સનો ઉપયોગ કરીને જટિલ એપ્લિકેશનો બનાવી શકો છો.
 
->Tip
+>ટિપ
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>આ ગાઇડ આવા લોકો માટે ડિઝાઇન કરવામાં આવી છે જે **સ્ટેપ બાય સ્ટેપ શીખવાનું** પસંદ કરે છે. જો તમે લાઇવ ઉદાહરણો દ્વારા શીખવાનું પસંદ કરો છો, તો અમારા [પ્રેકટિકલ ટ્યૂટોરિઅલ](/tutorial/tutorial.html) જુઓ. તમને આ ગાઇડ અને ટ્યુટોરીયલ એકબીજાને કોમ્પલિમેન્ટરી લાગશે.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+આ સ્ટેપ બાય સ્ટેપ ગાઇડમાં પ્રથમ પ્રકરણ છે રિએક્ટના મેઈન કોન્સેપ્ટ્સ. તમે નેવિગેશન સાઇડબારમાં તેના બધા પ્રકરણોનું લિસ્ટ શોધી શકો છો. જો તમે મોબાઇલથી આ વાંચી રહ્યાં છો, તો તમે તમારી સ્ક્રીનની જમણી બાજુ નીચે આપેલા બટનને દબાવીને નેવિગેશનને ઍક્સેસ કરી શકો છો.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+આ ગાઇડમાં દરેક પ્રકરણ અગાઉના પ્રકરણોમાં રજૂ કરેલા નોલેજ પર નિર્માણ કરે છે. **સાઇડબારમાં દેખાતા "મેઈન કોન્સેપ્ટ્સ" પ્રકરણો ક્રમમાં વાંચીને જ, તમે મોટા ભાગનું રિએક્ટ શીખી શકો છો.** ઉદાહરણ તરીકે, [“JSX પરિચય”](/docs/introducing-jsx.html) એ આ પછીનો પ્રકરણ છે.
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## નોલેજ લેવલની ધારણાઓ {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+રીએક્ટ JavaScript લાઇબ્રેરી છે, અને તેથી અમે માનીએ છીએ કે તમને JavaScript ભાષાની બેઝિક સમજ છે. **જો તમને ખૂબ આત્મવિશ્વાસ ન હોય, તો અમે ભલામણ કરીએ છીએ [આ JavaScript ટ્યુટોરીયલ વાંચો](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) તમારા નોલેજ લેવલને ચકાસવા માટે** અને અમે તમને કોઈપણ ગૂંચવણો વગર આ ગાઇડને અનુસરવા માટે સક્ષમ બનાવીશું. તમે 30 મિનિટ અને એક કલાકની વચ્ચે પૂર્ણ કરી શકો છો, અને પરિણામે તમને એવું લાગશે નહીં કે તમે એક જ સમયે રીએક્ટ અને JavaScript બંને શીખી રહ્યાં છો.
 
->Note
+>નૉૅધ
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>આ ગાઇડ ક્યારેક ઉદાહરણોમાંના કેટલાક નવા JavaScript સિન્ટેક્ષનો ઉપયોગ કરે છે. જો તમે છેલ્લા થોડા વર્ષોમાં JavaScript સાથે કામ કર્યું નથી, તો [આ ત્રણ મુદ્દાઓ](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) તમને સૌથી વધુ પરિચિત બનાવશે.
 
 
-## Let's Get Started! {#lets-get-started}
+## ચાલો, શરુ કરીએ! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
+નીચે સ્ક્રોલ કરવાનું ચાલુ રાખો, અને વેબસાઇટ ફૂટરની પહેલાં તમને [આ ગાઇડના આગલા પ્રકરણ](/docs/introducing-jsx.html) ની લિંક મળશે.
 
 
