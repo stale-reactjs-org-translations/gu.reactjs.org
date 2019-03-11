@@ -60,7 +60,7 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
             },
           }}>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>ડૉક્સ</MetaTitle>
+            <MetaTitle onDark={true}>દસ્તાવેજો</MetaTitle>
             {sectionListDocs.map(section => {
               const defaultItem = section.items[0];
               return (
@@ -73,7 +73,7 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
             })}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>ચેનલો</MetaTitle>
+            <MetaTitle onDark={true}>સંપર્ક કરવાના માધ્યમ</MetaTitle>
             <ExternalFooterLink
               href="https://github.com/facebook/react"
               target="_blank"
@@ -128,11 +128,11 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
             ))}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>વધુ</MetaTitle>
-            <FooterLink to="/tutorial/tutorial.html">ટ્યુટોરિયલ</FooterLink>
+            <MetaTitle onDark={true}>અન્ય</MetaTitle>
+            <FooterLink to="/tutorial/tutorial.html">Tutorial</FooterLink>
             <FooterLink to="/blog/">Blog</FooterLink>
             <FooterLink to="/acknowledgements.html">
-              સ્વીકૃતિ
+              Acknowledgements
             </FooterLink>
             <ExternalFooterLink
               href="https://facebook.github.io/react-native/"
