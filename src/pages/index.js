@@ -265,7 +265,7 @@ class Home extends Component {
                         containerNodeID={node.frontmatter.domid}
                         loaded={babelLoaded}>
                         <h3 css={headingStyles}>{node.frontmatter.title}</h3>
-                        <div dangerouslySetInnerHTML={{__html: node.html }} />
+                        <div dangerouslySetInnerHTML={{__html: node.html}} />
                       </CodeExample>
                     );
                   })}
