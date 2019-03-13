@@ -133,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    JavaScript લાઇબ્રેરી user interfaces બનાવવા માટે
+                    User interfaces બનાવવા માટેની JavaScript library 
                   </p>
                   <Flex
                     valign="center"
@@ -153,7 +153,7 @@ class Home extends Component {
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        માર્ગદર્શન
+                      ટ્યૂટોરિઅલ લો 
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -290,7 +290,7 @@ class Home extends Component {
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    માર્ગદર્શન
+                  ટ્યૂટોરિઅલ લો 
                   </ButtonLink>
                 </CtaItem>
               </Flex>

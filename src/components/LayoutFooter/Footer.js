@@ -60,7 +60,7 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
             },
           }}>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>દસ્તાવેજો</MetaTitle>
+            <MetaTitle onDark={true}>માર્ગદર્શિકા</MetaTitle>
             {sectionListDocs.map(section => {
               const defaultItem = section.items[0];
               return (
