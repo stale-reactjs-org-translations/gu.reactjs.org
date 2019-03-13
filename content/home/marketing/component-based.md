@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: Component પર આધારિત
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+Encapsulated કોમ્પોનન્ટ બનાવો કે જે પોતાના state નું સંચાલન કરે, પછી તેમને ભેગા કરી જટિલ UI બનાવો.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+Component નું logic, templates ના બદલે JavaScript માં લખાયેલું હોવાથી તમે તમારી એપ્લિકેશનમાંથી rich ડેટા સરળતાથી પસાર કરી શકો છો અને state ને DOM માંથી બહાર રાખી શકો છો.
