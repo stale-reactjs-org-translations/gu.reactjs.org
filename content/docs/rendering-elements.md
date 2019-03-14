@@ -16,11 +16,11 @@ next: components-and-props.html
 const element = <h1>Hello, world</h1>;
 ```
 
-React Elements સાદા ઑબ્જેક્ટ્સ છે અને તે બનાવવા માટે સસ્તા છે, જે બ્રાઉઝર DOM Elements થી વિપરીત છે. React DOM,React Elements સાથે મેચ કરવા માટે DOM ને અપડેટ કરવાની કાળજી લે છે.
+React Elements સાદા ઑબ્જેક્ટ્સ છે અને તે બનાવવા માટે સસ્તા છે, જે બ્રાઉઝર DOM Elements થી વિપરીત છે. React DOM, React Elements સાથે મેચ કરવા માટે DOM ને અપડેટ કરવાની કાળજી લે છે.
 
 >**નૉૅધ:**
 >
->એક "components" ની વધુ જાણીતી ખ્યાલ સાથે elements ને ભ્રમિત કરી શકે છે. અમે [આગામી વિભાગ](/docs/components-and-props.html) માં components રજૂ કરીશું. Elements એ છે કે કયા components "બનેલા છે" અને આગળ વધતા પહેલાં અમે તમને આ વિભાગ વાંચવા માટે પ્રોત્સાહિત કરીએ છીએ.
+>"components" એ મોટો વિષય છે, લોકો "components" અને "elements" નો તફાવત સમજી શકતા નથી.અમે [આગામી વિભાગ](/docs/components-and-props.html) માં components નો પરિચય આપીશું.Elements એ components થી "બનેલા છે" અને આગળ વધતા પહેલાં અમે તમને આ વિભાગ વાંચવા માટે પ્રોત્સાહિત કરીએ છીએ.
 
 ## DOM માં એલિમેન્ટ રેંડરિંગ {#rendering-an-element-into-the-dom}
 
