@@ -13,7 +13,7 @@ next: components-and-props.html
 તમે સ્ક્રીન પર શું જોવા માંગો છો તેનું એક તત્વ(Element) વર્ણન કરે છે:
 
 ```js
-const element = <h1>નમસ્તે ?</h1>;
+const element = <h1>Hello, world</h1>;
 ```
 
 React Elements સાદા ઑબ્જેક્ટ્સ છે અને તે બનાવવા માટે સસ્તા છે, જે બ્રાઉઝર DOM Elements થી વિપરીત છે. React DOM,React Elements સાથે મેચ કરવા માટે DOM ને અપડેટ કરવાની કાળજી લે છે.
