@@ -13,7 +13,7 @@ next: components-and-props.html
 તમે સ્ક્રીન પર શું જોવા માંગો છો તેનું એક તત્વ(Element) વર્ણન કરે છે:
 
 ```js
-const element = <h1>Hello, world</h1>;
+const element = <h1>નમસ્તે ?</h1>;
 ```
 
 React Elements સાદા ઑબ્જેક્ટ્સ છે અને તે બનાવવા માટે સસ્તા છે, જે બ્રાઉઝર DOM Elements થી વિપરીત છે. React DOM,React Elements સાથે મેચ કરવા માટે DOM ને અપડેટ કરવાની કાળજી લે છે.
@@ -44,7 +44,7 @@ React Element ને root DOM node માં રેન્ડર કરવા મ
 
 ## Rendered Element ને અપડેટ કરી રહ્યું છે {#updating-the-rendered-element}
 
-React elements [અવ્યવસ્થિત](https://en.wikipedia.org/wiki/Immutable_object) છે. એકવાર તમે element બનાવી લો, પછી તમે તેના children અથવા attributes ને બદલી શકતા નથી. એક element મૂવીમાં એક ફ્રેમ જેવું છે: તે ચોક્કસ સમયે UI રજૂ કરે છે.
+React elements [અપરિવર્તીત](https://en.wikipedia.org/wiki/Immutable_object) છે. એકવાર તમે element બનાવી લો, પછી તમે તેના children અથવા attributes ને બદલી શકતા નથી. એક element મૂવીમાં એક ફ્રેમ જેવું છે: તે ચોક્કસ સમયે UI રજૂ કરે છે.
 
 અત્યાર સુધીના અમારા જ્ઞાનથી, UI ને અપડેટ કરવાની એકમાત્ર રીત એ એક નવું element બનાવવું છે અને તેને `ReactDOM.render ()` પર પસાર કરવું છે.
 
