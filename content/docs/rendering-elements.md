@@ -1,6 +1,6 @@
 ---
 id: rendering-elements
-title: Rendering Elements
+title: રેન્ડરિંગ Elements
 permalink: docs/rendering-elements.html
 redirect_from:
   - "docs/displaying-data.html"
@@ -8,68 +8,68 @@ prev: introducing-jsx.html
 next: components-and-props.html
 ---
 
-Elements are the smallest building blocks of React apps.
+Elements એ React એપ્લિકેશન્સના નાનામાં નાના બિલ્ડિંગ બ્લોક્સ છે.
 
-An element describes what you want to see on the screen:
+Element, તમે સ્ક્રીન પર શું જોવા માંગો છો તેનું વર્ણન કરે છે:
 
 ```js
-const element = <h1>Hello, world</h1>;
+const element = <h1>Hello World</h1>;
 ```
 
-Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
+React Elements સાદા ઑબ્જેક્ટ્સ છે અને તે બનાવવા સરળ છે, જે બ્રાઉઝર DOM Elements થી અલગ છે. React DOMએ React Elements સાથે મેચ કરવા માટે DOM ને અપડેટ કરવાની કાળજી લે છે.
 
->**Note:**
+> **નૉૅધ:**
 >
->One might confuse elements with a more widely known concept of "components". We will introduce components in the [next section](/docs/components-and-props.html). Elements are what components are "made of", and we encourage you to read this section before jumping ahead.
+> લોકો elements ને ખુબજ પ્રચલિત એવો કોન્સેપટ "components" સમજી કન્ફુઝ થઇ શકે છે. અમે [આગામી વિભાગ](/docs/components-and-props.html) માં components નો પરિચય આપીશું. Components એ Elements થી "બને છે" અને આગળ વધતા પહેલાં અમે તમને આ વિભાગ વાંચવા માટે પ્રોત્સાહિત કરીએ છીએ.
 
-## Rendering an Element into the DOM {#rendering-an-element-into-the-dom}
+## DOM માં element રેન્ડર કરવું {#rendering-an-element-into-the-dom}
 
-Let's say there is a `<div>` somewhere in your HTML file:
+ચાલો ધારીએ કે તમારી HTML ફાઇલમાં ક્યાંક `<div>` છે.
 
 ```html
 <div id="root"></div>
 ```
 
-We call this a "root" DOM node because everything inside it will be managed by React DOM.
+અમે તેને "root" DOM node કહીએ છીએ કારણ કે તેની અંદરની દરેક વસ્તુ React DOM દ્વારા સંચાલિત કરવામાં આવશે.
 
-Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
+React થી બનેલી એપ્લિકેશન્સમાં સામાન્ય રૂપે એક જ `root` DOM node હોય છે. જો તમે હાલની એપ્લિકેશનમાં React ને સંકલિત કરી રહ્યાં હોવ, તો તમે ઈચ્છો એટલા અલગ અલગ `root` DOM nodes હોઈ શકે છે.
 
-To render a React element into a root DOM node, pass both to `ReactDOM.render()`:
+React Element ને `root` DOM node માં રેન્ડર કરવા માટે, બંનેને `ReactDOM.render()` માં પસાર કરો:
 
 `embed:rendering-elements/render-an-element.js`
 
 [](codepen://rendering-elements/render-an-element)
 
-It displays "Hello, world" on the page.
+તે પેજ પર "Hello, world" દર્શાવે છે.
 
-## Updating the Rendered Element {#updating-the-rendered-element}
+## Rendered Element ને અપડેટ કરવું {#updating-the-rendered-element}
 
-React elements are [immutable](https://en.wikipedia.org/wiki/Immutable_object). Once you create an element, you can't change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+React elements [અપરિવર્તીત](https://en.wikipedia.org/wiki/Immutable_object) છે. એકવાર તમે element બનાવી લો, પછી તમે તેના children કે attributes ને બદલી શકતા નથી. એક elementએ ફિલ્મમાં એક ફ્રેમ જેવું છે: તે એક ચોક્કસ ક્ષણનું UI રજૂ કરે છે.
 
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`.
+અત્યાર સુધીના આપણા જ્ઞાન મુજબ, UI ને અપડેટ કરવાની એકમાત્ર રીત એ એક નવું element બનાવવું અને તેને `ReactDOM.render ()` માં પસાર કરવું છે.
 
-Consider this ticking clock example:
+આ ટિકિંગ ઘડિયાળનું ઉદાહરણ ધ્યાનમાં લો:
 
 `embed:rendering-elements/update-rendered-element.js`
 
 [](codepen://rendering-elements/update-rendered-element)
 
-It calls `ReactDOM.render()` every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+તે પ્રત્યેક સેકન્ડે [SetInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) દ્વારા `ReactDOM.render()` ને કૉલ કરે છે.
 
->**Note:**
+> **નૉૅધ:**
 >
->In practice, most React apps only call `ReactDOM.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+> વ્યવહારમાં, મોટાભાગના React એપ્લિકેશનો ફક્ત એક વાર `ReactDOM.render()` ને કૉલ કરે છે. આગલા વિભાગોમાં આપણે જાણીશું કે આવા કોડને [stateful components](/docs/state-and-lifecycle.html) માં કઈ રીતે સામેલ કરવા.
 >
->We recommend that you don't skip topics because they build on each other.
+> અમારી તમને ભલામણ છે કે, તમે મુદ્દાઓને કુદાવસો નહિ, કારણકે તેઓ એકબીજા પાર આધારિત છે
 
-## React Only Updates What's Necessary {#react-only-updates-whats-necessary}
+## React ફક્ત શું જરૂરી છે એ ને અપડેટ કરે છે {#react-only-updates-whats-necessary}
 
-React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+React DOM એ element અને તેના childrenની સરખામણી તેમની આગળની સ્તિથી સાથે કરે છે, અને DOM ને ઇચ્છિત સ્થિતિમાં લાવવા માટે જરૂરી DOM અપડેટ્સને જ લાગુ કરે છે.
 
-You can verify by inspecting the [last example](codepen://rendering-elements/update-rendered-element) with the browser tools:
+તમે બ્રાઉઝર ટુલ્સ વડે [છેલ્લા ઉદાહરણને ](codepen://rendering-elements/update-rendered-element) inspect કરી ચકાશી શકો છો.
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
-Even though we create an element describing the whole UI tree on every tick, only the text node whose contents has changed gets updated by React DOM.
+ભલે આપણે દરેક ટિક પર સંપૂર્ણ UI tree નું વર્ણન કરતુ element બનાવીએ, પરંતુ ફક્ત text node કે જેનો content બદલાઈ ગયો છે તે જ React DOM દ્વારા અપડેટ થાય છે.
 
-In our experience, thinking about how the UI should look at any given moment rather than how to change it over time eliminates a whole class of bugs.
+અમારા અનુભવમાં, સમયાંતરે UIને કેવી રીતે બદલવું તેના કરતા UI એ કોઈપણ એક ક્ષણે કેવું દેખાવું જોઈએ તે વિશે વિચારીને બગ્સ(bugs) ની સંપૂર્ણ શ્રેણીને દૂર કરી શકાય છે.
