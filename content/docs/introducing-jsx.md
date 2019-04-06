@@ -9,7 +9,7 @@ next: rendering-elements.html
 આ વેરિયેબલ ડેકલેરેશન ધ્યાનમાં લો:
 
 ```js
-const element = <h1>કેમ છો?</h1>;
+const element = <h1>Hello World</h1>;
 ```
 
 આ ફની ટેગ સિન્ટેક્સ ન તો string કે HTML છે.
@@ -34,7 +34,7 @@ JSXનો ઉપયોગ કરવો એ Reactમાં [જરૂરી ન�
 
 ```js{1,2}
 const name = 'ગુણવંત શાહ';
-const element = <h1>કેમ છો, {name}</h1>;
+const element = <h1>Hello World, {name}</h1>;
 
 ReactDOM.render(
   element,
@@ -58,7 +58,7 @@ const user = {
 
 const element = (
   <h1>
-    કેમ છો, {formatName(user)}!
+    Hello World, {formatName(user)}!
   </h1>
 );
 
@@ -81,9 +81,9 @@ ReactDOM.render(
 ```js{3,5}
 function getGreeting(user) {
   if (user) {
-    return <h1>કેમ છો, {formatName(user)}!</h1>;
+    return <h1>Hello World, {formatName(user)}!</h1>;
   }
-  return <h1>કેમ છો, અપરિચિત.</h1>;
+  return <h1>Hello World, અપરિચિત.</h1>;
 }
 ```
 
@@ -122,7 +122,7 @@ JSX ટૅગ્સમાં ચિલડ્રન શામેલ હોઈ શ
 ```js
 const element = (
   <div>
-    <h1>કેમ છો?</h1>
+    <h1>Hello World</h1>
     <h2>તમને અહીં મળીને આનંદ થયો.</h2>
   </div>
 );
@@ -149,7 +149,7 @@ Babel JSX ને `React.createElement()` કૉલ્સ માં કંપા�
 ```js
 const element = (
   <h1 className="greeting">
-    કેમ છો?
+    Hello World
   </h1>
 );
 ```
@@ -158,7 +158,7 @@ const element = (
 const element = React.createElement(
   'h1',
   {className: 'greeting'},
-  'કેમ છો?'
+  'Hello World'
 );
 ```
 
@@ -170,7 +170,7 @@ const element = {
   type: 'h1',
   props: {
     className: 'greeting',
-    children: 'કેમ છો?'
+    children: 'Hello World'
   }
 };
 ```

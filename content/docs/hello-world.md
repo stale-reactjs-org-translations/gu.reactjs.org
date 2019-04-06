@@ -1,6 +1,6 @@
 ---
 id: hello-world
-title: કેમ છો?
+title: Hello World
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
@@ -10,12 +10,12 @@ next: introducing-jsx.html
 
 ```js
 ReactDOM.render(
-  <h1>કેમ છો?</h1>,
+  <h1>Hello World</h1>,
   document.getElementById('root')
 );
 ```
 
-તે પેજ પર "કેમ છો?" લખેલું શીર્ષક દર્શાવે છે.
+તે પેજ પર "Hello World" લખેલું શીર્ષક દર્શાવે છે.
 
 [](codepen://hello-world)
 
