@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "ટ્યૂટોરિઅલ: React નો પરિચય"
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,40 +12,40 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+આ ટ્યૂટોરિઅલ,આપને Reactનું જ્ઞાન હોય એવું ધારતું નથી.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## ટ્યૂટોરિઅલ શરૂ કરતા પહેલા {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React apps, and mastering it will give you a deep understanding of React.
+આપણે આ ટ્યૂટોરિઅલમાં એક નાની ગૅમ બનાવીશું. **તમે ગૅમ ન બનાવતા હોય, તો તમે આ વિભાગ છોડવા માટે લલચાશો -- પરંતુ એક તક આપી જુઓ.** ટ્યૂટોરિઅલમાં તમે જે તકનીકો શીખશો એ કોઈપણ React એપ્લિકેશન બનાવના માટે મૂળભૂત છે, અને એની નિપુણતા તમને React ની ઊંડી સમજણ આપશે.
 
->Tip
+>ટિપ
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>આ ટ્યૂટોરિઅલ એવા લોકો માટે બન્યું છે જે **પ્રેકટીકલ કરીને શીખવા** માંગે છે. જો તમારે સિદ્ધાંતો ને પાયાથી શીખવા હોય તો, અમારી [ક્રમશઃ માર્ગદર્શિકા](/docs/hello-world.html) જુઓ. તમને આ ટ્યૂટોરિઅલ અને માર્ગદર્શિકલ એકબીજાના પૂરક જણાશે .
 
-The tutorial is divided into several sections:
+આ ટ્યૂટોરિઅલ અમુક વિભાગોમાં વિભાજીત છે:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [ટ્યૂટોરિઅલનું સેટઅપ](#setup-for-the-tutorial) ટ્યૂટોરિઅલ અનુસરવાનો **સ્ટાર્ટિંગ પોઇન્ટ** આપશે.
+* [ઓવરવ્યૂ](#overview) React ના **મૂળભૂત સિદ્ધાંતો** જેવા કે components, props, અને state વિષે શીખવશે.
+* [ગૅમ પૂર્ણ કરવી](#completing-the-game) એ  React ડેવલોપમેન્ટની  **ખુબ સામાન્ય તકનીકો** શીખવશે.
+* [સમય યાત્રા ઉમેરવી](#adding-time-travel) એ Reactની અલગ જ પ્રકારની શક્તિની **ઊંડી જાણકારી** આપશે.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+ટ્યૂટોરિઅલનો લાભ મેળવવા માટે, દરેક વિભાગો એકસાથે પૂર્ણ કરવા જરૂરી નથી. જેટલું વધુ કરી શકો એવો પ્રયત્ન કરો -- ભલે એ એક કે બે વિભાગો હોય.
 
-### What Are We Building? {#what-are-we-building}
+### આપણે શું બાનવીએ છીએ? {#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+આ ટ્યૂટોરિઅલમાં, અમે રમી શકાય એવી શૂન્ય-ચોકડીની ગૅમ કઈ રીતે બનાવાય એ બતાવશું.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+આપણે શું બનાવવા જઈ રહ્યા છે, એ તમે અહીં જોઈ શકો છો: **[અંતિમ રિઝલ્ટ](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. જો તમને કોડ ન સમજાય, અથવા તમે કોડ ની સિંટેક્ક્ષ થી અપરિચિત હોય, તો ગભરાશો નહીં! આ ટ્યૂટોરિઅલ નો ઉદ્દેશ તમને React અને એની સિંટેક્ક્ષ સમજાવવાંનો  છે.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+ટ્યૂટોરિઅલમાં આગળ વધતા પહેલા અમે તમને શૂન્ય-ચોકડીની રમત ચકાશવાની ભલામણ કરીએ છીએ. તમે એક વિશેષતાની નોંધ લેશો કે, ગૅમ બોર્ડ ની જમણી બાજુએ ક્રમાંકિત યાદી છે. એ યાદી ગૅમમાં લેવાયેલા દરેક પગલાંઓની પૂર્વ-વિગત(history) બતાવશે, અને જેમ ગૅમ આગળ વધશે તેમ તે અપડેટ થતા રહેશે.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+તમે શૂન્ય-ચોકડીની ગૅમ થી પરિચિત થયા બાદ તેને બંધ કરી શકો છો. આપણે આ ટ્યૂટોરિઅલમાં એક સરળ ટેમ્પ્લેટથી શરુ કરીશું. અમારું આગલું પગલું તમને તૈયાર કરવાનું છે જેથી તમે ગૅમ બનાવની શરૂઆત કરી શકો.
 
-### Prerequisites {#prerequisites}
+### પૂર્વજરૂરીયાતો{#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+અમે એવું ધારીએ છીએ કે તમે HTML અને JavaScript થી પરિચિત છો, પરંતુ તમને કોઈ અન્ય પ્રોગ્રામિંગ લેન્ગવેજનો અનુભવ હોય તો પણ તમે સાથે અનુસરી શકશો. અમે એવું પણ ધારીએ છીએ કે તમે પ્રોગ્રામિંગ કોન્સેપટ જેવા કે functions, objects, arrays, અને અમુક અંશે, classes થી પરિચિત હશો.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+જો આપ JavaScript રિવ્યુ કરવા માંગતા હોય, તો અમે [આ માર્ગદર્શિકા](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ની ભલામણ કરીએ છીએ. નોંધ લેશો કે, અમે અમુક ES6 -- JavaScriptનું તાજેતરનું વર્ઝનની વિશેષતાઓનો પણ ઉપયોગ કરીશું. અમે આ ટ્યૂટોરિયલમાં [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), અને [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) વિધાનોનો ઉપયોગ કરીશું. તમે  [Babel REPL](babel://es5-syntax-example) ના ઉપયોગ થી ES6 નો કોડ શેમાં કંપાઇલ થાય છે એ ચકાશી શકો છો.
 
 ## Setup for the Tutorial {#setup-for-the-tutorial}
 
