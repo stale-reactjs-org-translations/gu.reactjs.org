@@ -16,7 +16,7 @@ redirect_from:
 
 ## ટ્યૂટોરિઅલ શરૂ કરતા પહેલા {#before-we-start-the-tutorial}
 
-આપણે આ ટ્યૂટોરિઅલમાં એક નાની ગૅમ બનાવીશું. **તમે ગૅમ ન બનાવતા હોવ, તો તમે આ વિભાગ છોડવા માટે લલચાશો -- પરંતુ એક તક આપી જુઓ.** ટ્યૂટોરિઅલમાં તમે જે તકનીકો શીખશો એ કોઈપણ React એપ્લિકેશન બનાવના માટે મૂળભૂત છે, અને એની નિપુણતા તમને React ની ઊંડી સમજણ આપશે.
+આપણે આ ટ્યૂટોરિઅલમાં એક નાની ગૅમ બનાવીશું. **તમે ગૅમ ન બનાવતા હોય, તો તમે આ વિભાગ છોડવા માટે લલચાશો -- પરંતુ એક તક આપી જુઓ.** ટ્યૂટોરિઅલમાં તમે જે તકનીકો શીખશો એ કોઈપણ React એપ્લિકેશન બનાવના માટે મૂળભૂત છે, અને એની નિપુણતા તમને React ની ઊંડી સમજણ આપશે.
 
 >ટિપ
 >
@@ -35,7 +35,7 @@ redirect_from:
 
 આ ટ્યૂટોરિઅલમાં, અમે રમી શકાય એવી શૂન્ય-ચોકડીની ગૅમ કઈ રીતે બનાવાય એ બતાવશું.
 
-આપણે શું બનાવવા જઈ રહ્યા છે, એ તમે અહીં જોઈ શકો છો: **[અંતિમ રિઝલ્ટ](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. જો તમને કોડ ન સમજાય, અથવા તમે કોડ ની સિંટેક્ક્ષ થી અપરિચિત હોવ, તો ગભરાશો નહીં! આ ટ્યૂટોરિઅલ નો ઉદ્દેશ તમને React અને એની સિંટેક્ક્ષ સમજાવવાંનો  છે.
+આપણે શું બનાવવા જઈ રહ્યા છે, એ તમે અહીં જોઈ શકો છો: **[અંતિમ રિઝલ્ટ](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. જો તમને કોડ ન સમજાય, અથવા તમે કોડ ની સિંટેક્ક્ષ થી અપરિચિત હોય, તો ગભરાશો નહીં! આ ટ્યૂટોરિઅલ નો ઉદ્દેશ તમને React અને એની સિંટેક્ક્ષ સમજાવવાંનો  છે.
 
 ટ્યૂટોરિઅલમાં આગળ વધતા પહેલા અમે તમને શૂન્ય-ચોકડીની રમત ચકાશવાની ભલામણ કરીએ છીએ. તમે એક વિશેષતાની નોંધ લેશો કે, ગૅમ બોર્ડ ની જમણી બાજુએ ક્રમાંકિત યાદી છે. એ યાદી ગૅમમાં લેવાયેલા દરેક પગલાંઓની પૂર્વ-વિગત(history) બતાવશે, અને જેમ ગૅમ આગળ વધશે તેમ તે અપડેટ થતા રહેશે.
 
@@ -43,9 +43,9 @@ redirect_from:
 
 ### પૂર્વજરૂરીયાતો{#prerequisites}
 
-અમે એવું ધારીએ છીએ કે તમે HTML અને JavaScript થી પરિચિત છો, પરંતુ તમને કોઈ અન્ય પ્રાગ્રામિંગ લિન્ગ્યુએજનો અનુભવ હોય તો પણ તમે સાથે અનુસરી શકશો. અમે એવું પણ ધારીએ છીએ કે તમે પ્રાગ્રામિંગ કોન્સેપટ જેવા કે functions, objects, arrays, અને અમુક અંશે, classes થી પરિચિત હશો.
+અમે એવું ધારીએ છીએ કે તમે HTML અને JavaScript થી પરિચિત છો, પરંતુ તમને કોઈ અન્ય પ્રોગ્રામિંગ લેન્ગવેજનો અનુભવ હોય તો પણ તમે સાથે અનુસરી શકશો. અમે એવું પણ ધારીએ છીએ કે તમે પ્રોગ્રામિંગ કોન્સેપટ જેવા કે functions, objects, arrays, અને અમુક અંશે, classes થી પરિચિત હશો.
 
-જો આપ JavaScript રિવ્યુ કરવા માંગતા હોવ, તો અમે [આ માર્ગદર્શિકા](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ની ભલામણ કરીએ છીએ. નોંધ લેશો કે, અમે અમુક ES6 -- JavaScriptનું તાજેતરનું વર્ઝનની વિશેષતાઓનો પણ ઉપયોગ કરીશું. અમે આ ટ્યૂટોરિયલમાં [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), અને [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) વિધાનોનો ઉપયોગ કરીશું. તમે  [Babel REPL](babel://es5-syntax-example) ના ઉપયોગ થી ES6 નો કોડ શેમાં કંપાઇલ થાય છે એ ચકાશી શકો છો.
+જો આપ JavaScript રિવ્યુ કરવા માંગતા હોય, તો અમે [આ માર્ગદર્શિકા](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ની ભલામણ કરીએ છીએ. નોંધ લેશો કે, અમે અમુક ES6 -- JavaScriptનું તાજેતરનું વર્ઝનની વિશેષતાઓનો પણ ઉપયોગ કરીશું. અમે આ ટ્યૂટોરિયલમાં [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), અને [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) વિધાનોનો ઉપયોગ કરીશું. તમે  [Babel REPL](babel://es5-syntax-example) ના ઉપયોગ થી ES6 નો કોડ શેમાં કંપાઇલ થાય છે એ ચકાશી શકો છો.
 
 ## Setup for the Tutorial {#setup-for-the-tutorial}
 
