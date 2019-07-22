@@ -22,7 +22,7 @@ console.log(doubled);
 
 ### બહુવિધ Components ને રેંડરિંગ {#rendering-multiple-components}
 
-તમે elements ના સંગ્રહનું નિર્માણ કરી શકો છો અને તેમને કર્લી કૌંસ `{}` દ્વારા [JSX માં શામેલ ](/docs/introducing-jsx.html#embedding-expressions-in-jsx) કરી શકો છો.
+તમે elements ના સંગ્રહનું નિર્માણ કરી શકો છો અને તેમને કર્લી કૌંસ `{}` દ્વારા [JSX માં શામેલ](/docs/introducing-jsx.html#embedding-expressions-in-jsx) કરી શકો છો.
 
 નીચે, અમે JavaScript ['નકશા () '] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ફંકશનનો ઉપયોગ કરીને 'સંખ્યાઓ' એરેથી લૂપ કરીએ છીએ. અમે દરેક વસ્તુ માટે `<li>` element પરત કરીએ છીએ. છેવટે, આપણે સૂચિના પરિણામી એરેને યાદીમાં 'સૂચિબદ્ધ' કરીએ છીએ:
 
@@ -130,15 +130,15 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-વસ્તુઓના ક્રમમાં ફેરફાર થઈ શકે તો અમે કીઝ માટે અનુક્રમણિકાનો ઉપયોગ કરવાની ભલામણ કરીએ છીએ. આ પ્રભાવ પર નકારાત્મક અસર કરી શકે છે અને Component state સાથે સમસ્યાઓ ઊભી કરી શકે છે. [ચાવીરૂપ અનુક્રમણિકાનો ઉપયોગ કીની જેમ નકારાત્મક અસરો પર ઊંડાણપૂર્વક સમજૂતી માટે ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) રોબિન પોકોર્નીના લેખને તપાસો. જો તમે વસ્તુઓ સૂચિબદ્ધ કરવા માટે કોઈ સ્પષ્ટ કી અસાઇન કરવાનું પસંદ ન કરો તો, રીકેટ્સ કીઓ તરીકે અનુક્રમણિકાનો ઉપયોગ કરવા માટે ડિફોલ્ટ કરશે.
+વસ્તુઓના ક્રમમાં ફેરફાર થઈ શકે તો અમે કીઝ માટે અનુક્રમણિકાનો ઉપયોગ કરવાની ભલામણ કરીએ છીએ. આ પ્રભાવ પર નકારાત્મક અસર કરી શકે છે અને Component state સાથે સમસ્યાઓ ઊભી કરી શકે છે. [ચાવીરૂપ અનુક્રમણિકાનો ઉપયોગ કીની જેમ નકારાત્મક અસરો પર ઊંડાણપૂર્વક સમજૂતી માટે](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) રોબિન પોકોર્નીના લેખને તપાસો. જો તમે વસ્તુઓ સૂચિબદ્ધ કરવા માટે કોઈ સ્પષ્ટ કી અસાઇન કરવાનું પસંદ ન કરો તો, રીકેટ્સ કીઓ તરીકે અનુક્રમણિકાનો ઉપયોગ કરવા માટે ડિફોલ્ટ કરશે.
 
-જો તમને [વધુ શીખવામાં રસ હોય તો શા માટે કીઝ આવશ્યક છે ](/docs/reconciliation.html#recursing-on-children) તે વિશેની એક વિગતવાર સમજણ અહીં છે.
+જો તમને [વધુ શીખવામાં રસ હોય તો શા માટે કીઝ આવશ્યક છે](/docs/reconciliation.html#recursing-on-children) તે વિશેની એક વિગતવાર સમજણ અહીં છે.
 
 ### કીઝ સાથે components કાઢવી {#extracting-components-with-keys}
 
 કીઝ આસપાસના એરેના સંદર્ભમાં ફક્ત અર્થપૂર્ણ બનાવે છે.
 
-ઉદાહરણ તરીકે, જો તમે `સૂચિ` component [કાઢો ](/docs/components-and-props.html#extracting-components) છો, તો તમારે સૂચિમાં `<ListItem />` elements ને સૂચિમાં `<li>` element ની જગ્યાએ રાખવું જોઈએ.
+ઉદાહરણ તરીકે, જો તમે `સૂચિ` component [કાઢો](/docs/components-and-props.html#extracting-components) છો, તો તમારે સૂચિમાં `<ListItem />` elements ને સૂચિમાં `<li>` element ની જગ્યાએ રાખવું જોઈએ.
 
 **ઉદાહરણ: ખોટી કી વપરાશ**
 
