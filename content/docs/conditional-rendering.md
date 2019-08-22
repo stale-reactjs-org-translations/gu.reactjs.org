@@ -8,11 +8,11 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+રિએક્ટ માં, તમે વિશિષ્ટ કોમ્પોનેન્ટ બનાવી શકો છો જે તમને જરૂરી વર્તનને સમાવી લે છે. તે પછી, તમારા એપ્લિકેશન ના સ્ટેટે ને આધારે રેન્ડર કરાવી શકો છો.
 
-Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
+રીએક્ટમાં શરતી રેંડરિંગ જાવાસ્ક્રિપ્ટમાં શરતો જેવું કાર્ય કરે છે તે જ રીતે કાર્ય કરે છે. જાવાસ્ક્રિપ્ટ ઓપરેટરો જેમ કે [`if`] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) અથવા [કન્ડિશન્લ ઓપરેટર] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ને પ્રતિક્રિયા આપવા, અને UI ને તેની સાથે મેચ કરવા અપડેટ કરવા દો.
 
-Consider these two components:
+આ બે કોમ્પોનેટ્સ ને ધ્યાન માં લો:
 
 ```js
 function UserGreeting(props) {
@@ -24,7 +24,7 @@ function GuestGreeting(props) {
 }
 ```
 
-We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
+અમે એક `Greeting` કોમ્પોનેન્ટ બનાવશુ જે વપરાશકર્તા લોગીન છે કે નાઈ તેના આધારે દેખાશે.
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**તેને કોડપેન પર અજમાવો**] (https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-This example renders a different greeting depending on the value of `isLoggedIn` prop.
+આ ઉદાહરણ માં `isLoggedIn` પ્રોપ ની વૅલ્યુ ના આધારે ગ્રીટિંગ્સ રેન્ડર થાય છે.
 
-### Element Variables {#element-variables}
+### એલિમેન્ટ વેરીએબલ {#element-variables}
 
-You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
+તમે એલિમેન્ટ ને સ્ટોર કરવા વેરીએબલ નો ઉપયોગ કરી શકો છો. તે તમને કોમ્પોનેન્ટ ના એક ભાગ ને શરતો પર રેન્ડર કરવામાં મદદ કરે છે, બાકીના આઉટપુટ ને બદલ્યા વગર.
 
-Consider these two new components representing Logout and Login buttons:
+આ બે નવા કોમ્પોનેન્ટ ને જોવો, જે લોગીન અને લોગૉઉટ બટન ને રજુ કરે છે:
 
 ```js
 function LoginButton(props) {
@@ -70,9 +70,9 @@ function LogoutButton(props) {
 }
 ```
 
-In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
+નીચેના ઉદાહરણ માં, `LoginControl` નામના [સ્ટેટેફૂલ કોમ્પોનેન્ટ] (/docs/state-and-lifecycle.html#adding-local-state-to-a-class) બનાવશુ.
 
-It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
+તે તેના સ્ટેટ ના આધારે યા તો `<LoginButton />` અને યા તો `<LogoutButton />` રેન્ડર કરશે. તે આગળ ના ઉદાહરણ માંથી `<Greeting />` પણ રેન્ડર કરશે.
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -116,13 +116,16 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[**તેને કોડપેન પર અજમાવો**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
 
-### Inline If with Logical && Operator {#inline-if-with-logical--operator}
+જ્યારે કોઈ વેરીએબલ જાહેર કરવું અને `if` સ્ટેટમેન્ટનો ઉપયોગ કરવો એ શરતી રૂપે કોમ્પોનેન્ટ ને રેન્ડર કરવા માટે એક સરસ રીત છે, કેટલીકવાર તમે ટૂંકા વાક્યરચનાનો ઉપયોગ કરી શકો છો. નીચે જણાવેલ jsx માં શરતોને ઇનલાઇન કરવાના કેટલાક રસ્તાઓ છે.
 
-You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+
+### ઇનલાઇન ઇફ લોજિકલ && ઓપરેટર સાથે {#inline-if-with-logical--operator}
+
+
+તમે [jsx માં કોઈપણ એક્સપ્રેસ્સ્ન એમ્બેડ કરી શકો છો] (/docs/introducing-jsx.html#embedding-expressions-in-jsx) તેમને કર્લી કૌંસમાં લપેટીને. આમાં જાવાસ્ક્રિપ્ટ લોજિકલ `&&` ઓપરેટર શામેલ છે. તે એલિમેન્ટ સહિતના શરતી સ્થિતિ માટે સરળ હોઈ શકે છે:
 
 ```js{6-10}
 function Mailbox(props) {
@@ -146,17 +149,20 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[**તેને કોડપેન પર અજમાવો**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+તે જાવાસ્ક્રિપ્ટમાં કાર્ય કરે છે કારણ કે જાવાસ્ક્રિપ્ટમાં, `true && expression` હંમેશાં "true" `એક્સપ્રેસ્સ્ન` નું મૂલ્યાંકન કરે છે, અને `false && expression` - હંમેશાં "false" નું મૂલ્યાંકન કરે છે.
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
 
-### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+તેથી, જો સ્થિતિ `true` છે, તો `&&` after પછીનું એલિમેન્ટ આઉટપુટમાં દેખાશે. જો તે `false` છે, તો રિએક્ટ તેને અવગણશે અને જતું કરશે.
 
-Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+### કન્ડિશન્લ ઓપરેટર સાથે ઇનલાઇન If-Else {#inline-if-else-with-conditional-operator}
 
-In the example below, we use it to conditionally render a small block of text.
+
+કન્ડિશન્લ એલિમેન્ટ ઇનલાઇન રેન્ડર કરવા માટેની બીજી પદ્ધતિ જાવાસ્ક્રિપ્ટ કન્ડિશન્લ ઓપરેટરનો ઉપયોગ છે [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+
+
+નીચેના ઉદાહરણ માં અમે તેનો ઉપયોગ એક નાના બ્લોક ને કોંડિશનલ રેન્ડર કરવા મારે કર્યો છે.
 
 ```javascript{5}
 render() {
@@ -169,7 +175,7 @@ render() {
 }
 ```
 
-It can also be used for larger expressions although it is less obvious what's going on:
+તેનો ઉપયોગ મોટા એક્સપ્રેસ્સ્ન માટે પણ થઈ શકે છે, તેમ છતાં શું ચાલી રહ્યું છે તે સ્પષ્ટ નથી:
 
 ```js{5,7,9}
 render() {
@@ -186,13 +192,16 @@ render() {
 }
 ```
 
-Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+જાવાસ્ક્રિપ્ટ ની જેમ, આ તમારા પર આધાર રાખે છે કે તમને અને તામ્રરી ટીમ ને સરળ પડે એવી સ્ટાઇલ પસંદ કરો। પણ યાદ રાખો જયારે કન્ડિશન જટિલ બને છે ત્યારે આ સારો સમય છે કોમ્પોનેન્ટ એક્સટ્રેક્ટ કરવા [extract a component](/docs/components-and-props.html#extracting-components).
 
-### Preventing Component from Rendering {#preventing-component-from-rendering}
 
-In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+### કોમ્પોનેન્ટ ને રેન્ડર થતા અટકાવા {#preventing-component-from-rendering}
 
-In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
+
+કોઈ સમયે તમારે કોમ્પોનેન્ટ ને પોતાને હાઇડ કરવાનો હોય છે, જયારે તે બીજા કોમ્પોનેન્ટ દ્વારા રેન્ડર થતો હોય. એવું કરવા મારે રેન્ડર આઉટપુટ ની જગ્યા એ null રીટર્ન કરવો.
+
+
+નીચેના ઉદાહરણ માં, `<WarningBanner />` `warn` નામના પ્રોપ ની વૅલ્યુ ઉપર આધાર રાખી રેન્ડર થાય છે. જો પ્રોપ્સ ની વૅલ્યુ `false` હશે તો કોમ્પોનેન્ટ રેન્ડર નાઈ થાય. 
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -238,6 +247,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[**તેને કોડપેન પર અજમાવો**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
+
+કોમ્પોનેન્ટ ના રેન્ડર થી null રીટર્ન કરવું એ કોમ્પોનેન્ટ ની લાઈફસાયક્લ મેથોડ ને કોઈ અસર નાઈ કરે. ઉદાહરણ તરીકે `componentDidUpdate` કોલ થાય છે.
