@@ -16,7 +16,11 @@ redirect_from:
 
 ## ટ્યૂટોરિઅલ શરૂ કરતા પહેલા {#before-we-start-the-tutorial}
 
+<<<<<<< HEAD
 આપણે આ ટ્યૂટોરિઅલમાં એક નાની ગૅમ બનાવીશું. **તમે ગૅમ ન બનાવતા હોય, તો તમે આ વિભાગ છોડવા માટે લલચાશો -- પરંતુ એક તક આપી જુઓ.** ટ્યૂટોરિઅલમાં તમે જે તકનીકો શીખશો એ કોઈપણ React એપ્લિકેશન બનાવના માટે મૂળભૂત છે, અને એની નિપુણતા તમને React ની ઊંડી સમજણ આપશે.
+=======
+We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+>>>>>>> 8b30ae43439818009213da86eca872a3d869c5eb
 
 >ટિપ
 >
@@ -335,7 +339,7 @@ The React Devtools extension for [Chrome](https://chrome.google.com/webstore/det
 
 The React DevTools let you check the props and the state of your React components.
 
-After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tab will appear as the last tab to the right.
+After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tabs ("⚛️ Components" and "⚛️ Profiler") will appear as the last tabs to the right. Use "⚛️ Components" to inspect the component tree.
 
 **However, note there are a few extra steps to get it working with CodePen:**
 
