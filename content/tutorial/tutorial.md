@@ -16,11 +16,7 @@ redirect_from:
 
 ## ટ્યૂટોરિઅલ શરૂ કરતા પહેલા {#before-we-start-the-tutorial}
 
-<<<<<<< HEAD
 આપણે આ ટ્યૂટોરિઅલમાં એક નાની ગૅમ બનાવીશું. **તમે ગૅમ ન બનાવતા હોય, તો તમે આ વિભાગ છોડવા માટે લલચાશો -- પરંતુ એક તક આપી જુઓ.** ટ્યૂટોરિઅલમાં તમે જે તકનીકો શીખશો એ કોઈપણ React એપ્લિકેશન બનાવના માટે મૂળભૂત છે, અને એની નિપુણતા તમને React ની ઊંડી સમજણ આપશે.
-=======
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
->>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
 
 >ટિપ
 >
