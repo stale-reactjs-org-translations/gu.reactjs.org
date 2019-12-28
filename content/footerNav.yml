@@ -1,11 +1,11 @@
 community:
-  title: Community
+  title: સમુદાય
 
 docs:
-  title: Docs
+  title: માર્ગદર્શિકા
 
 more:
-  title: More
+  title: અન્ય
   items:
     - title: Tutorial
       to: /tutorial/tutorial.html
@@ -18,7 +18,7 @@ more:
       external: true
 
 channels:
-  title: Channels
+  title: સંપર્ક કરવાના માધ્યમ
   items:
     - title: GitHub
       to: https://github.com/facebook/react
