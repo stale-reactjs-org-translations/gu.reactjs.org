@@ -6,10 +6,11 @@ prev: lists-and-keys.html
 next: lifting-state-up.html
 redirect_from:
   - "tips/controlled-input-null-value.html"
-  - "docs/forms-zh-CN.html"
+  - "docs/forms-in-GJ.html"
+
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML ફોર્મના એલિમેન્ટ, react ના અન્ય DOM એલિમેન્ટથી અલગ કામ કરે છે, કારણ કે ફોર્મ એલિમેન્ટ કુદરતી રીતે થોડી આંતરિક સ્થિતિ ધરાવે છે. ઉદાહરણ તરીકે, સાદા HTML માં આ ફોર્મ એક નામ સ્વીકારે છે:
 
 ```html
 <form>
@@ -21,16 +22,15 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+જ્યારે ઉપયોગકર્તા ફોર્મ સબમિટ કરે ત્યારે ફોર્મને નવા પેજ પર મોકલવું એ HTMLની મૂળભૂત લાક્ષણિકતા છે. જો તમારે આ લાક્ષણિકતા Reactમાં  જોઈએ છે, તો તે ફકત કાર્ય કરે છે. પરંતુ મોટાભાગના કિસ્સાઓમાં, જાવાસ્ક્રિપ્ટમાં કાર્ય કરવું તે યોગ્ય છે જે ફોર્મ સબમિશનને હેન્ડલ કરે છે અને ઉપયોગકર્તાએ ફોર્મમાં દાખલ કરેલા ડેટાનો ઉપયોગ પણ કરી શકે છે. આમ કરવાની પ્રમાણભૂત રીતને "contorlled components" કહે છે..
 
 ## Controlled Components {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+HTML માં, ફોર્મ એલિમેન્ટ જેમ કે `<input>` , `<textarea>`, અને `<select>` સામાન્ય રીતે પોતાનું state જાળવી રાખે છે અને ઉપયોગકર્તા ઈનપુટને આધારે તેને અપડેટ કરે છે. React માં mutable state ને ખાસ કરીને property ના state માં રખવામાં આવે છે, અને તેને [`setState()`](/docs/react-component.html#setstate). સાથે અપડેટ કરવામાં આવે છે.
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+આપણે આ બે પ્રતિક્રિયાને react state "single source of truth" થી જોડી શકીએ. પછી તે React કોમ્પોનેટ જે ફોર્મ ને રેન્ડર કરે છે તે ઉપયોગકર્તાના ઈનપુટ કરવાથી તે ફોર્મમાં શું થાય છે તેને પણ નિયંત્રિત કરે છે. ઈનપુટ ફોર્મ એલિમેન્ટ જેની value આ પ્રકિયા દ્વારા નિયંત્રિત થાય છે તેને "controlled component" કહેવામાં આવે છે..
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
-
+ઉદાહરણ તરીકે, જો આપણે પહેલાંના ઉદાહરણ પર જ્યારે નામ સબમિટ કરીએ ત્યારે log દર્શાવવા માંગતા હોય, તો આપણે ફોર્મને controlled component તરીકે લખી શકીએ..
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
   constructor(props) {
@@ -66,9 +66,10 @@ class NameForm extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
-Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+જયારે `value` attribute ફોર્મ એલિમેન્ટ પર સેટ કરેલું છે, તેની પ્રદર્શિત કિમંત હમેંશા `this.state.value` રહેશે, જે તેને React state source of truth બનાવે છે. React state ને અપડેટ કરવા માટે `handleChange` દરેક keystroke પર ચાલતું હોવાથી, પ્રદશિત કિમંત ઉપયોગકર્તાના પ્રકાર તરીકે અપડેટ થશે.
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+controlled component સાથે, દરેક state પરિવર્તનમાં તેની સાથે સંકળાયેલ હેન્ડલર ફંક્શન હશે.આ ઉપયોગકર્તાના ઇનપુટને સીધી રીતે બદલવા અથવા માન્ય કરવા માટે તેને સરળ બનાવે છે.ઉદાહરણ તરીકે, જો આપણે લખેલા બધા નામો કેપિટલ અક્ષરોમાં જોતાં હોય, તો આપણે `હેન્ડલ ચેંજ` આ રીતે લખી શકીએ: 
+
 
 ```javascript{2}
 handleChange(event) {
@@ -78,16 +79,14 @@ handleChange(event) {
 
 ## The textarea Tag {#the-textarea-tag}
 
-In HTML, a `<textarea>` element defines its text by its children:
+HTML માં, `<textarea>` એલિમેન્ટ તેના children દ્વારા લખાણને દર્શાવે છે:
 
 ```html
 <textarea>
   Hello there, this is some text in a text area
 </textarea>
 ```
-
-In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
-
+React માં, `<textarea>` તેના બદલે `value` એટ્રિબ્યુટનો ઉપયોગ કરે છે. આ રીતે, `<textarea>` નો ઉપયોગ કરીને ફોર્મ, જે single line ઈનપુટનો ઉપયોગ કરે છે તેવી સમાન રીતે લખી શકાય છે..
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
   constructor(props) {
@@ -122,12 +121,10 @@ class EssayForm extends React.Component {
   }
 }
 ```
-
-Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
-
+ધ્યાનમાં લેવા જેવું `this.state.value` કન્સ્ટ્રક્ટરમાં initialized થયેલું છે, જેથી ટેક્સ્ટએરિયા તેની અંદર કેટલાક લખાણથી ચાલુ થાશે..
 ## The select Tag {#the-select-tag}
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+HTML માં, `<select>` ડ્રોપ-ડાઉન લિસ્ટ બનાવે છે. ઉદાહરણ તરીકે, આ HTML flavours માટેનું ડ્રોપ-ડાઉન લિસ્ટ બનાવશે.. 
 
 ```html
 <select>
@@ -138,7 +135,7 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+ધ્યાનમાં લેવાનું કે coconut ઓપ્શન શરૂઆતથીજ પસંદ થયેલો છે, કારણ તેના `selected` એટ્રિબ્યુટનાં લીધે. React `selected` એટ્રિબ્યુટનો ઉપયોગ કરવાને બદલે `value` એટ્રિબ્યુટનો ઉપયોગ `select` નાં root tag પર કરે છે. આ controlled component માં વધુ અનુકૂળ છે કારણ કે તમારે તેને ફક્ત એક જ જગ્યાએ અપડેટ કરવાની જરૂર છે. ઉદાહરણ તરીકે::
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -180,11 +177,11 @@ class FlavorForm extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+કુલ મળીને, આ તે બનાવે છે જેથી `<input type="text">`, `<textarea>`, and `<select>` બધાજ એક સરખી રીતે કાર્ય કરી શકે છે  - તે બધા એક value સ્વીકારે છે કે જેનો ઉપયોગ તમે controlled component નાં અમલ માટે કરી શકો છો. 
 
-> Note
+> નોંધ
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+> તમે array ને પણ `value` એટ્રિબ્યુટમાં પાસ કરી શકો છો, જે તમને `select` ટેગમાં મલ્ટીપલ વિકલ્પો પસંદ કરવાની પરવાનગી આપે છે:
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
@@ -192,18 +189,17 @@ Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select
 
 ## The file input Tag {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTMLમાં, `<input type="file">` ઉપયોગકર્તાને તેમની ડિવાઇસ સ્ટોરેજ માંથી સર્વર પર એક કે તેથી વધારે ફાઇલ જવાસ્ક્રિપ્ટની મદદ થી અપલોડ કરવા દે છે. via [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
 
 ```html
 <input type="file" />
 ```
 
-Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+કારણ તેની value રીડ ઓન્લી છે, તે React નાં **uncontrolled** કોમ્પોનેન્ટ છે.તેની ચર્ચા અન્ય uncontrolled components સાથે કરવામાં આવશે.[later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
 
 ## Handling Multiple Inputs {#handling-multiple-inputs}
 
-When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
-
+જ્યારે તમારે વધારે નિયંત્રિત `input` એલિમેન્ટ ને હેન્ડલ કરવાની જરુર છે, ત્યારે તમે દરેક એલિમેન્ટમાં `name` એટ્રિબ્યુટ ઉમેરી શકો છો અને હેન્ડલર ફંક્શનન  `event.target.name` ની value ને આધારે શું કરવું તે નક્કી કરી શકે છે.
 For example:
 
 ```javascript{15,18,28,37}
@@ -256,7 +252,7 @@ class Reservation extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
+નોંધ લો કેવી રીતે અમે ES6 નો ઉપયોગ કરેલો [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) આપેલ ઇનપુટ નામને તેને અનુરૂપ state કી સાથે અપડેટ કરવા માટેની syntax
 
 ```js{2}
 this.setState({
@@ -272,14 +268,12 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
-
+ઉપરાંત, `setState()` ઓટોમેટિક હોવાથી,[આંશિક સ્થિતિને વર્તમાન સ્થિતિમાં મર્જ કરે છે](/docs/state-and-lifecycle.html#state-updates-are-merged),આપણે તેને ફક્ત ચેન્જ થયેલા ભાગ સાથે કોલ કરવાની જરૂર હોય છે.
 ## Controlled Input Null Value {#controlled-input-null-value}
 
-Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
-
+[controlled component](/docs/forms.html#controlled-components) value prop ની કિમંત સ્પષ્ટ કરવી એ વપરાશકર્તાને ઇનપુટ બદલતા અટકાવે છે , જ્યાં સુધી તમે ઇચ્છો નહીં ત્યાં સુધી ઉપયોગકર્તાને ઇનપુટ બદલતા અટકાવે છે. જો તમે `value` ઉલ્લેખિત કરેલ છે, પરંતુ ઇનપુટ હજી પણ સુધારવા યોગ્ય છે, તો તમે આકસ્મિક રીતે ` value ` `undefined`  અથવા `null` પર સેટ કર્યું હશે.
 The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
-
+નીચેનો કોડ આ દર્શાવે છે.(આ ઈનપુટ પહેલાથી લોક છે પરંતુ ટૂંક સમયમાં સુધારવા યોગ્ય બનશે..)
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
 
@@ -291,8 +285,8 @@ setTimeout(function() {
 
 ## Alternatives to Controlled Components {#alternatives-to-controlled-components}
 
-It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
-
+controlled components નો ઉપયોગ કરવો તે અમુક સમયે કંટાળાજનક હોઈ શકે છે, કારણ કે તમારે દરેક વખતે event handler લખવાની જરૂર પડે છે જ્યાં તમારો ડેટા બદલી શકાય અને જ્યાં ઈનપુટની સ્થિતિ ને React કોમ્પોનેન્ટથી પાઇપ કરી શકાય.જ્યારે તમે preexisting કોડબેઝને React માં રૂપાંતરિત કરી રહ્યાં હોવ અથવા React એપ્લિકેશનને non-React લાઇબ્રેરી સાથે integrate કરી રહ્યાં હોવ ત્યારે આ ત્રાંસજનક બની શકે છે.આવી પરિસ્થિતિમાં, તમે check કરી શકો છો [uncontrolled components](/docs/uncontrolled-components.html), ફોર્મ ઈનપુટના અમલીકરણ માટેની વૈકલ્પિક ટેક્નિક છે.
+ 
 ## Fully-Fledged Solutions {#fully-fledged-solutions}
 
-If you're looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, [Formik](https://jaredpalmer.com/formik) is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don't neglect to learn them.
+જો તમે વેલિડેશન, મુલાકાત લીધેલ ફીલ્ડ્સને track કરવા, અને ફોર્મનાં સબમિશન સંભાળવા સહિતના સંપૂર્ણ સમાધાનની શોધ કરી રહ્યાં છો, તો [Formik] (https://jaredpalmer.com/formik) એ લોકપ્રિય પસંદગીઓમાંની એક છે. જો કે, તે controlled components and managing state નાં સમાન સિદ્ધાંતો પર બનાવવામાં આવ્યું છે - તેથી તેમને શીખવાની અવગણના ન કરો.
