@@ -9,11 +9,11 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+અમુક સમયે,ઘણા કોમ્પોનેન્ટને સમાન રીતે બદલતા ડેટાને રિફલેક્ટ કરવાની જરુર હોય છે. અમે વહેંચાયેલ સ્ટેટને તેમના નજીકના સામાન્ય સ્ટેટ સુધી વધારવાનું સુચન કરીએ છીએ. આ ક્રિયામાં કેવી રીતે કાર્ય થાય છે તે જોઇએ.
 
-In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.
+આ ભાગમાં, આપણે તાપમાન માટેનું calculator બનાવીશુ, જે નક્કી કરશે કે પાણી આપેલ તાપમાન સુધી ગરમ થયુ છે કે નહી.
 
-We will start with a component called `BoilingVerdict`. It accepts the `celsius` temperature as a prop, and prints whether it is enough to boil the water:
+આપણે `BoilingVerdict` નામનાં કોમ્પોનેન્ટથી ચાલુ કરશું. તે `celsuis` માં તાપમાન પ્રોપની કિમંત તરીકે સ્વિકારશે, અને તે પ્રિન્ટ કરશે કે તે પાણી ગરમ કરવા માટે પુરતું છે કે નહી.
 
 ```js{3,5}
 function BoilingVerdict(props) {
@@ -24,10 +24,9 @@ function BoilingVerdict(props) {
 }
 ```
 
-Next, we will create a component called `Calculator`. It renders an `<input>` that lets you enter the temperature, and keeps its value in `this.state.temperature`.
+ત્યાર પછી આપણે `Calculator` નામનું કોમ્પોનેન્ટ બનાવીશું. તે `<input>` ને રેન્ડર કરશે અને તમને તાપમાન એન્ટર કરવા આપશે, અને તેની કિમંત `this.state.temperture` માં સાચવશે.
 
-Additionally, it renders the `BoilingVerdict` for the current input value.
-
+વધારેમાં, તે ઇનપુટ કરેલી કિમંત ને `BoilingVerdict` માં રેન્ડર કરશે.
 ```js{5,9,13,17-21}
 class Calculator extends React.Component {
   constructor(props) {
@@ -60,9 +59,10 @@ class Calculator extends React.Component {
 
 ## Adding a Second Input {#adding-a-second-input}
 
-Our new requirement is that, in addition to a Celsius input, we provide a Fahrenheit input, and they are kept in sync.
+આપણી નવી જરુરિયાત છે કે, સેલ્સિયસ ઇનપુટ ઉપરાંત ફેરનહિટ ઇનપુટ આપવું અને તેઓને સિનટેકસમાં સાથે રાખવામાં આવે.
 
-We can start by extracting a `TemperatureInput` component from `Calculator`. We will add a new `scale` prop to it that can either be `"c"` or `"f"`:
+આપણે `Calculator` કોમ્પોનેન્ટ પરથી `TemperatureInput` ને એક્સટ્રેટ કરી શકીએ. આપણે નવો `scale` પ્રોપ ઉમેરીશું જે `"c"` અથવા `"f"` હોઇ શકે.
+:
 
 ```js{1-4,19,22}
 const scaleNames = {
@@ -95,8 +95,7 @@ class TemperatureInput extends React.Component {
 }
 ```
 
-We can now change the `Calculator` to render two separate temperature inputs:
-
+હવે અમે `Calculator` ને બે અલગ તાપમાન રેન્ડર કરવા માટે બદલશું. 
 ```js{5,6}
 class Calculator extends React.Component {
   render() {
@@ -112,14 +111,12 @@ class Calculator extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
 
-We have two inputs now, but when you enter the temperature in one of them, the other doesn't update. This contradicts our requirement: we want to keep them in sync.
+હવે આપણી પાસે બે ઇનપુટ છે, પણ જ્યારે તમે બે માંથી એકનું તાપમાન બદલશો તો, તો બીજાનું બદલાશે નહી.આ આપણી જરુરિયાતને અલગ પાડે છે:આપણે તેને સિનટેક્સમાં સાથે રાખવાના છે.
 
-We also can't display the `BoilingVerdict` from `Calculator`. The `Calculator` doesn't know the current temperature because it is hidden inside the `TemperatureInput`.
-
+આપણે `Calculator` માંથી `BoilingVerdict` ને દર્શાવી શકતા નથી.`Calculator` વર્તમાન તાપમાનને જાણતું નથી કારણ કે તે `TemperatureInput` ની અંદર હાઇડ થયેલું છે. 
 ## Writing Conversion Functions {#writing-conversion-functions}
 
-First, we will write two functions to convert from Celsius to Fahrenheit and back:
-
+પહેલા, આપણે Celsius ને Fahrenheit માં બદલવા માટે બે ફંકશન બનાવીશુ.
 ```js
 function toCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5 / 9;
@@ -130,10 +127,9 @@ function toFahrenheit(celsius) {
 }
 ```
 
-These two functions convert numbers. We will write another function that takes a string `temperature` and a converter function as arguments and returns a string. We will use it to calculate the value of one input based on the other input.
+આ બે ફંકશન નંબરને કનવર્ટ કરશે.આપણે બીજુ ફંકશન બનવીશુ જે આર્ગુમેન્ટ તરીકે સ્ટ્રીંગ `temperature` અને કનવર્ટર ફંકશનને લેશે અને સ્ટ્રીંગ પરત કરશે.આપણે તેનો ઉપયોગ અન્ય ઇનપુટ આધરિત એક ઇનપુટની કિમંતની ગણતરી કરવા માટે કરીશું.
 
-It returns an empty string on an invalid `temperature`, and it keeps the output rounded to the third decimal place:
-
+તે અમાન્ય ઇનપુટ પર ખાલી સ્ટ્રિંગ પરત કરશે,અને તે આઉટપુટને ત્રીજા દશાંશ સ્થાને રાખે છે:
 ```js
 function tryConvert(temperature, convert) {
   const input = parseFloat(temperature);
@@ -146,11 +142,10 @@ function tryConvert(temperature, convert) {
 }
 ```
 
-For example, `tryConvert('abc', toCelsius)` returns an empty string, and `tryConvert('10.22', toFahrenheit)` returns `'50.396'`.
-
+ઉદાહરણ તરીકે, આ `tryConvert('abc', toCelsius)` ખાલી સ્ટ્રિંગ પરત કરશે, અને આ `tryConvert('10.22', toFahrenheit)` પરત કરશે `'50.396'`.
 ## Lifting State Up {#lifting-state-up}
 
-Currently, both `TemperatureInput` components independently keep their values in the local state:
+હાલમાં, બંને `TemperatureInput` કોમ્પોનેન્ટ સ્વત્રંત રીતે પોતાની વેલ્યુને સામાન્ય સ્ટેટમાં રાખે છે.
 
 ```js{5,9,13}
 class TemperatureInput extends React.Component {
@@ -168,16 +163,15 @@ class TemperatureInput extends React.Component {
     const temperature = this.state.temperature;
     // ...  
 ```
+જ્યારે, આપણે ઇચ્છતા હોય કે બંને ઇનપુટ એકબીજા સાથે વાક્યરચનામાં રહે.જ્યારે આપણે સેલ્સિયસ ઇનપુટને સુધારીએ,ત્યારે ફેરનહિટ ઇનપુટ કનવર્ટ કરેલા તાપમાને રિફ્લેકટ કરવું જોઇએ. vice versa 
 
-However, we want these two inputs to be in sync with each other. When we update the Celsius input, the Fahrenheit input should reflect the converted temperature, and vice versa.
+React માં, સ્ટેટને વહેંચવાની ક્રિયા તેને જરુરી કોમ્પોનેન્ટને તેની નજીકના કોમ્પોનેન્ટ પર ખસેડીને પુરી થાય છે.આ ક્રિયાને "lifting state up" કહે છે. આપણે લોકલ સ્ટેટમાંથી `TemperatureInput` ને કાઢી નાખશું અને તેને `Calculator` માં મુવ કરીશુ.
 
-In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called "lifting state up". We will remove the local state from the `TemperatureInput` and move it into the `Calculator` instead.
+જો શેર થયેલ સ્ટેટ `Calculator` નું પોતાનું હોય,તો તે આપેલા બંને ઇનપુટ માટે "source of truth" બને છે.તે આપેલ બંને ઇનપુટ એકબીજા સાથે વય્વહારમાં રહે તે માટેનું સુચન કરી શકે છે.બંને `TemperatureInput` કોમ્પોનેન્ટના પ્રોપ્સ એક જ મુખ્ય  `Calculator` કોમ્પોનેન્ટમાંથી આવતા હોવાથી બંને ઇનપુટ હમેંશા એક જ સાથે સુમેળમાં રહેશે.
 
-If the `Calculator` owns the shared state, it becomes the "source of truth" for the current temperature in both inputs. It can instruct them both to have values that are consistent with each other. Since the props of both `TemperatureInput` components are coming from the same parent `Calculator` component, the two inputs will always be in sync.
+ચાલો તે કેવી રીતે કામ કરે છે તેના સ્ટેપ જોઇએ.
 
-Let's see how this works step by step.
-
-First, we will replace `this.state.temperature` with `this.props.temperature` in the `TemperatureInput` component. For now, let's pretend `this.props.temperature` already exists, although we will need to pass it from the `Calculator` in the future:
+પહેલાતો, આપણે `TemperatureInput` કોમ્પોનેન્ટમાં `this.state.temperature` ને `this.props.temperature`માં ફેરવીશું.અત્યાર માટે, માની લઇએ કે `this.props.temperature` એ પહેલેથી જ બનાવેલ છે, કારણ કે આગળ જતા આપણે તેને `Calculator` માં પાસ કરવાની જરૂર પડશે.
 
 ```js{3}
   render() {
@@ -186,12 +180,12 @@ First, we will replace `this.state.temperature` with `this.props.temperature` in
     // ...
 ```
 
-We know that [props are read-only](/docs/components-and-props.html#props-are-read-only). When the `temperature` was in the local state, the `TemperatureInput` could just call `this.setState()` to change it. However, now that the `temperature` is coming from the parent as a prop, the `TemperatureInput` has no control over it.
+આપણે જાણીએ છી કે [props are read-only](/docs/components-and-props.html#props-are-read-only).જ્યારે `temperature` લોકલ સ્ટેટમાં હોય ત્યારે, `TemperatureInput` ને બદલવા માટે `this.setState()` ને કોલ કરી શકશે.જો કે હવે `temperature` પેરેન્ટ પ્રોપ તરફથી આવતું હોવાથી,`TemperatureInput` તેને કંટ્રોલ કરી શકશે નહી.
 
-In React, this is usually solved by making a component "controlled". Just like the DOM `<input>` accepts both a `value` and an `onChange` prop, so can the custom `TemperatureInput` accept both `temperature` and `onTemperatureChange` props from its parent `Calculator`.
+React માં, આ ને સામાન્ય રીતે "controlled" કોમ્પોનેન્ટથી સોલ્વ કરી શકાય છે. જેવી રીતે DOM માં `<input>` ટેગ `value` અને `onChange` ને પ્રોપ તરીકે સ્વિકારે છે, તે જ રીતે `TemperatureInput` તેના મુખ્ય `Calculator` કોમ્પોનેન્ટમાંથી `temperature` અને `onTemperatureChange` એમ બંને પ્રોપ્સ ને સ્વિકારી શકે છે.
 
-Now, when the `TemperatureInput` wants to update its temperature, it calls `this.props.onTemperatureChange`:
 
+હવે, જ્યારે `TemperatureInput` નું તાપમાન બદલાવવાની જરૂર પડે ત્યારે, `this.props.onTemperatureChange` ને કોલ કરે છે.
 ```js{3}
   handleChange(e) {
     // Before: this.setState({temperature: e.target.value});
@@ -199,13 +193,13 @@ Now, when the `TemperatureInput` wants to update its temperature, it calls `this
     // ...
 ```
 
->Note:
+>નોંધ:
 >
->There is no special meaning to either `temperature` or `onTemperatureChange` prop names in custom components. We could have called them anything else, like name them `value` and `onChange` which is a common convention.
+>કસ્ટમ કોમ્પોનેન્ટમાં `temperature` અને `onTemperatureChange` એમ પ્રોપ્સના આવા નામ રાખવાનો કોઇ ખાસ અર્થ થતો નથી.આપણે તેને બીજા નામ સાથે પણ કોલ કરી શકીએ, જેવા કે `value` અને `onChange` આ એક સામાન્ય રસ્તો છે.
 
-The `onTemperatureChange` prop will be provided together with the `temperature` prop by the parent `Calculator` component. It will handle the change by modifying its own local state, thus re-rendering both inputs with the new values. We will look at the new `Calculator` implementation very soon.
+પેરેન્ટ `Calculator` કોમ્પોનેન્ટ દ્વારા `onTemperatureChange` પ્રોપ સાથે `temperature` પ્રોપ પણ આપવામાં આવશે.તે પોતાના લોકલ સ્ટેટમાં ફેરફાર કરશે અને તે કરેલા ફેરફાર ને હેન્ડલ પણ કરશે, આમ નવી વેલ્યુ સાથે બંને ઇનપુટ ફરીથી રેન્ડર થાસે. આપણે હવે જલ્દી નવા `Calculator` ને ઇમ્પ્લિમેન્ટ કરવામાં ધ્યાન આપીશું.
 
-Before diving into the changes in the `Calculator`, let's recap our changes to the `TemperatureInput` component. We have removed the local state from it, and instead of reading `this.state.temperature`, we now read `this.props.temperature`. Instead of calling `this.setState()` when we want to make a change, we now call `this.props.onTemperatureChange()`, which will be provided by the `Calculator`:
+`Calculator`માં બદલાવ કરતા પહેલા,ચાલો `TemperatureInput` કોમ્પોનેન્ટમાં કરેલા ફેરફારોને જોઇએ. આપણે તેમાંથી લોકલ સ્ટેટને કાઢી નાખ્યુ છે, અને `this.state.temperature` ના અમલ ને બદલે, આપણે હવે `this.props.temperature` ને અમલમાં લેશુ. જ્યારે આપણે કોઇ બદલાવ કરવા માંગતા  હોય ત્યારે `this.setState()` ને બદલે, `this.props.onTemperatureChange()` કોલ કરીએ છીએ, જે  `Calculator` દ્વારા પ્રોવાઇડ કરવામાં આવી છે.
 
 ```js{8,12}
 class TemperatureInput extends React.Component {
@@ -232,11 +226,12 @@ class TemperatureInput extends React.Component {
 }
 ```
 
-Now let's turn to the `Calculator` component.
+હવે `Calculator` કોમ્પોનેન્ટ તરફ આવીએ.
 
-We will store the current input's `temperature` and `scale` in its local state. This is the state we "lifted up" from the inputs, and it will serve as the "source of truth" for both of them. It is the minimal representation of all the data we need to know in order to render both inputs.
+આપણે વર્તમાન ઇનપુટનું `temperature` અને `scale` તેના લોકલ સ્ટેટમાં સ્ટોર કરીશુ. આ તે સ્ટેટ છે જેને આપણે ઇનપુટમાંથી "lifted up" કર્યુ છે, અને તે તે બંને માટે "source of truth" તરીકે કામ કરશે.આ બંને ઇનપુટને રેન્ડર કરવા માટે આપણે તે ડેટાને જાણવાની જરૂર છે આ તે માટેની ન્યુનતમ રજુઆત છે.
 
-For example, if we enter 37 into the Celsius input, the state of the `Calculator` component will be:
+
+ઉદાહરણ તરીકે, જ્યારે આપણે સેલ્સિયસ ઇનપુટ તરીકે 37 લઇએ, ત્યારે `Calculator` કોમ્પોનેન્ટનું સ્ટેટ આવું હશે:
 
 ```js
 {
@@ -245,7 +240,8 @@ For example, if we enter 37 into the Celsius input, the state of the `Calculator
 }
 ```
 
-If we later edit the Fahrenheit field to be 212, the state of the `Calculator` will be:
+
+જો આપણે પછી ફેરનહિટ ફિલ્ડને 212 કરીશું, તો ત્યારે `Calculator` કોમ્પોનેન્ટનું સ્ટેટ આવું હશે:
 
 ```js
 {
@@ -256,7 +252,7 @@ If we later edit the Fahrenheit field to be 212, the state of the `Calculator` w
 
 We could have stored the value of both inputs but it turns out to be unnecessary. It is enough to store the value of the most recently changed input, and the scale that it represents. We can then infer the value of the other input based on the current `temperature` and `scale` alone.
 
-The inputs stay in sync because their values are computed from the same state:
+ઇનપુટસ એકબીજા સાથે સુમેળમાં રહે છે કારણ કે તેની વેલ્યુ સરખા સ્ટેટમાંથી લેવામાં આવી છે:
 
 ```js{6,10,14,18-21,27-28,31-32,34}
 class Calculator extends React.Component {
@@ -301,30 +297,40 @@ class Calculator extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/WZpxpz?editors=0010)
 
-Now, no matter which input you edit, `this.state.temperature` and `this.state.scale` in the `Calculator` get updated. One of the inputs gets the value as is, so any user input is preserved, and the other input value is always recalculated based on it.
 
+હવે, તમે `this.state.temperature` અને `this.state.scale` માંથી ગમે તે ઇનપુટને બદલશો તો `Calculator` માં પણ ફેરફાર થાશે.અને ઇનપુટમાંથી એકને જ તે વેલ્યુ મળે છે અને અન્ય ઇનપુટને હમેંશા તેની વેલ્યુ ને આધારે ફરીથી ગણતરી કરવામાં આવે છે.
 Let's recap what happens when you edit an input:
 
-* React calls the function specified as `onChange` on the DOM `<input>`. In our case, this is the `handleChange` method in the `TemperatureInput` component.
-* The `handleChange` method in the `TemperatureInput` component calls `this.props.onTemperatureChange()` with the new desired value. Its props, including `onTemperatureChange`, were provided by its parent component, the `Calculator`.
-* When it previously rendered, the `Calculator` has specified that `onTemperatureChange` of the Celsius `TemperatureInput` is the `Calculator`'s `handleCelsiusChange` method, and `onTemperatureChange` of the Fahrenheit `TemperatureInput` is the `Calculator`'s `handleFahrenheitChange` method. So either of these two `Calculator` methods gets called depending on which input we edited.
-* Inside these methods, the `Calculator` component asks React to re-render itself by calling `this.setState()` with the new input value and the current scale of the input we just edited.
-* React calls the `Calculator` component's `render` method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.
-* React calls the `render` methods of the individual `TemperatureInput` components with their new props specified by the `Calculator`. It learns what their UI should look like.
-* React calls the `render` method of the `BoilingVerdict` component, passing the temperature in Celsius as its props.
+ચાલો જોઇએ ઇનપુટમાં ફેરફાર કરીએ તો શું થાય:
+
+* React DOM `<input>` પર સ્પેશિફાય કરેલ `onChange` ફંકશનને કોલ કરે છે. જયારે અહિંયા, `TemperatureInput` કોમ્પોનેન્ટની `handleChange` મેથડ કોલ થાય છે.
+* `TemperatureInput` કોમ્પોનેન્ટની `handleChange` મેથડ તેની ઇચ્છિત વેલ્યુ સાથે `this.props.onTemperatureChange()`ને કોલ કરે છે. તેના પ્રોપ્સ, જેમાં `onTemperatureChange` આવેલ છે, તે તેના મૂળ કોમ્પોનેન્ટ `Calculator` દ્વારા આપવામાં આવેલ છે.
+
+* જયારે તે અગાઉ રેન્ડર થાય છે, ત્યારે તે સ્પષ્ટ કરે છે કે સેલ્સિયસ `TemperatureInput` ની `onTemperatureChange` એ `Calculator`ની `handleCelsiusChange` મેથડ  છે અને ફેરનહિટ `TemperatureInput` ની `onTemperatureChange` એ `Calculator`ની `handleFahrenheitChange` મેથડ છે. તેથી આપણે જે ઈનપુટમાં ફેરફાર કરશું તેના આધારે આ બેમાંથી `Calculator` ની મેથડ કોલ થાશે.
+
+* આ મેથડની અંદર, `Calculator` કોમ્પોનેન્ટ નવી ઈનપુટ વેલ્યુ અને ફેરફાર કરેલા ઈનપુટના વર્તમાન સ્કેલ સાથે `this.setState()`પર કોલ કરીને પોતાને ફરીવાર રેન્ડર કરવાનું React ને સૂચવે છે.
+
+* React UI કેવું દેખાવું જોઈએ તે જાણવા માટે `Calculator` કોમ્પોનેન્ટની `render` મેથડને કોલ કરે છે.બંને ઈનપુટસની વેલ્યુ વર્તમાન તાપમાન અને એક્ટિવ સ્કેલના આધારે ફરી ગણવામાં આવે છે. અહી તાપમાનનું રૂપાંતર કરવામાં આવે છે.
+
+* React `Calculator` દ્વારા નિશ્ચિત તેમના નવા પ્રોપ્સ સાથે અલગ અલગ `TemperatureInput` કોમ્પોનેન્ટની `render` મેથડ ને કોલ કરે છે. તે ત્યાં UI કેવું હોવું જોઈએ તે શીખે છે. 
+
+* React સેલ્સિયસમાં તાપમાનને તેના પ્રોપ્સ તરીકે પસાર કરીને,`BoilingVerdict` કોમ્પોનેન્ટની `render` મેથડ ને કોલ કરે છે.
 * React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.
 
-Every update goes through the same steps so the inputs stay in sync.
+* React DOM `BoilingVerdict` ને ઇચ્છિત ઈનપુટ વેલ્યુ સાથે મેચ કરવા માટે DOM ને અપડેટ કરે છે.આપણે હમણાં ફેરફાર કરેલું ઈનપુટ તેની વર્તમાન વેલ્યુ મેળવે છે, અને અન્ય ઈનપુટને ફેરફાર પછી તાપમાનમાં ફેરવવામાં આવે છે.
+
+દરેક અપડેટ સમાન પગલાઓમાંથી પસાર થાય છે જેનાથી ઇનપુટ સુમેળમાં રાખી શકાય.
+
 
 ## Lessons Learned {#lessons-learned}
 
-There should be a single "source of truth" for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down).
+React એપ્લિકેશનમાં બદલાતા કોઈ પણ ડેટા માટે એક જ "source of truth" હોવું જોઈએ.સામાન્ય રીતે,સ્ટેટને પહેલા તે કોમ્પોનેન્ટમાં ઉમેરાવામાં આવે છે જેને રેન્ડર કરવા માટે તેની જરૂર છે.પછી,જો બીજા કોમપોનેન્ટને પણ તેની જરૂર હોય તો, તમે તેને તેમના નજીક ના સામાન્ય કોમ્પોનેન્ટ સુધી લઈ જઈ શકો છો. સ્ટેટને વિવિધ કોમ્પોનેન્ટ વચ્ચે સુમેળ કરવાનો પ્રયાસ કરવાને બદલે તમારે આ [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down) જોવું જોઈએ.
 
-Lifting state involves writing more "boilerplate" code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state "lives" in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.
+લિફ્ટિંગ સ્ટેટમાં ટુ-વે બાઇંડિંગ એપ્રોચસ કરતાં પણ વધુ "boilerplate" માં કોડ લખવાનો સમાવેશ થાય છે,પરંતુ તેનો લાભ એ છે કે તે ભૂલો શોધવા અને અલગ કરવા માટે ઓછો સમય લે છે. કોઈપણ સ્ટેટ કેટલા કોમ્પોનેન્ટમાં લાઈવ છે અને તે કોમ્પોનેન્ટ જ તેને બદલી સકે છે, તેથી ભૂલો માટેના ક્ષેત્રમાં મોટો ઘટાડો થાય છે.આ ઉપરાંત, તમે યુઝરના ઈનપુટને નકારવા અથવા રૂપાંતર કરવા માટે કોઈ પણ લૉજિકને લાગું કરી શકો છો.
 
-If something can be derived from either props or state, it probably shouldn't be in the state. For example, instead of storing both `celsiusValue` and `fahrenheitValue`, we store just the last edited `temperature` and its `scale`. The value of the other input can always be calculated from them in the `render()` method. This lets us clear or apply rounding to the other field without losing any precision in the user input.
+જો કઇં પણ પ્રોપ્સ અથવા સ્ટેટમાંથી ડીરાઇવડ થઈ શકતું હોય તો તે સ્ટેટમાં હોવું જોઈએ નહીં.ઉદાહરણ તરીકે,`celsiusValue` અને `fahrenheitValue` બંને સ્ટોર કરવાને બદલે, આપણે ફક્ત બદલાયેલું `temperature` અને તેના `scale` નો સંગ્રહ કરશું. અન્ય ઈનપુટ વેલ્યુની ગણતરી હમેંશા તેની `render()` મેથડ પરથી કરી શકાય છે. આ આપણને યુઝરના ઈનપુટની ચોકસાઇ ગુમાવ્યા વગર અન્ય સ્ટેટમાં વેલ્યુને ક્લિયર અથવા લાગું કરવા દે છે.
 
-When you see something wrong in the UI, you can use [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source:
+જ્યારે તમને UI માં કઈ ખોટું દેખાય, ત્યારે તમે props નિરીક્ષણ કરવા અને સ્ટેટને અપડેટ કરવા જવાબદાર કોમ્પોનેન્ટ ન મળે ત્યાં સુધી તમે આનો [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) ઉપયોગ કરી શકો છે.અહી તમે તેમના સોર્સ ઉપરથી ભૂલો ટ્રેસ કરી શકો છો.
 
 <img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%">
 
