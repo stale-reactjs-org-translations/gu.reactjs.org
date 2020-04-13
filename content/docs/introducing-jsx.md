@@ -177,12 +177,20 @@ const element = {
 
 આ ઑબ્જેક્ટ્સને "React elements" કહેવામાં આવે છે. તમે તેમનો આ રીતે વિચાર કરી શકો છો કે સ્ક્રીન પર તમે જે જોવા માંગો છો તે તેનું વર્ણન છે. React આ ઓબ્જેક્ટો વાંચે છે અને DOM બનાવવા અને તેને અપ ટુ ડેટ રાખવા માટે તેનો ઉપયોગ કરે છે.
 
+<<<<<<< HEAD
 અમે આગલા વિભાગમાં DOM પર React elements રેન્ડર કરતા શીખીશું.
+=======
+We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 >**ટિપ:**
 >
+<<<<<<< HEAD
 <<<<<<< HEAD
 >અમે તમારી પસંદગીના એડિટર માટે ["Babel" લેંગ્વેજ ડેફિનશનનો](https://babeljs.io/docs/editors) ઉપયોગ કરવાની ભલામણ કરીએ છીએ જેથી બંને ES6 અને JSX કોડ યોગ્ય રીતે હાઈલાઈટ થાય. આ વેબસાઇટ [ઓશનિક નેક્સ્ટ](https://labs.voronianski.com/oceanic-next-color-scheme/) કલર સ્કિમનો ઉપયોગ કરે છે જે તેની સાથે અનુરૂપ છે.
 =======
 >We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme) color scheme which is compatible with it.
 >>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535

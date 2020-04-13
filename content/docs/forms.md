@@ -70,12 +70,16 @@ class NameForm extends React.Component {
 
 controlled component સાથે, દરેક state પરિવર્તનમાં તેની સાથે સંકળાયેલ હેન્ડલર ફંક્શન હશે.આ ઉપયોગકર્તાના ઇનપુટને સીધી રીતે બદલવા અથવા માન્ય કરવા માટે તેને સરળ બનાવે છે.ઉદાહરણ તરીકે, જો આપણે લખેલા બધા નામો કેપિટલ અક્ષરોમાં જોતાં હોય, તો આપણે `હેન્ડલ ચેંજ` આ રીતે લખી શકીએ: 
 
+<<<<<<< HEAD
 
 ```javascript{2}
 handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 ## The textarea Tag {#the-textarea-tag}
 
@@ -216,7 +220,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
