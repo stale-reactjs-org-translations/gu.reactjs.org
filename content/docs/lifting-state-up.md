@@ -301,20 +301,13 @@ class Calculator extends React.Component {
 હવે, તમે `this.state.temperature` અને `this.state.scale` માંથી ગમે તે ઇનપુટને બદલશો તો `Calculator` માં પણ ફેરફાર થાશે.અને ઇનપુટમાંથી એકને જ તે વેલ્યુ મળે છે અને અન્ય ઇનપુટને હમેંશા તેની વેલ્યુ ને આધારે ફરીથી ગણતરી કરવામાં આવે છે.
 Let's recap what happens when you edit an input:
 
-ચાલો જોઇએ ઇનપુટમાં ફેરફાર કરીએ તો શું થાય:
-
-* React DOM `<input>` પર સ્પેશિફાય કરેલ `onChange` ફંકશનને કોલ કરે છે. જયારે અહિંયા, `TemperatureInput` કોમ્પોનેન્ટની `handleChange` મેથડ કોલ થાય છે.
-* `TemperatureInput` કોમ્પોનેન્ટની `handleChange` મેથડ તેની ઇચ્છિત વેલ્યુ સાથે `this.props.onTemperatureChange()`ને કોલ કરે છે. તેના પ્રોપ્સ, જેમાં `onTemperatureChange` આવેલ છે, તે તેના મૂળ કોમ્પોનેન્ટ `Calculator` દ્વારા આપવામાં આવેલ છે.
-
-* જયારે તે અગાઉ રેન્ડર થાય છે, ત્યારે તે સ્પષ્ટ કરે છે કે સેલ્સિયસ `TemperatureInput` ની `onTemperatureChange` એ `Calculator`ની `handleCelsiusChange` મેથડ  છે અને ફેરનહિટ `TemperatureInput` ની `onTemperatureChange` એ `Calculator`ની `handleFahrenheitChange` મેથડ છે. તેથી આપણે જે ઈનપુટમાં ફેરફાર કરશું તેના આધારે આ બેમાંથી `Calculator` ની મેથડ કોલ થાશે.
-
-* આ મેથડની અંદર, `Calculator` કોમ્પોનેન્ટ નવી ઈનપુટ વેલ્યુ અને ફેરફાર કરેલા ઈનપુટના વર્તમાન સ્કેલ સાથે `this.setState()`પર કોલ કરીને પોતાને ફરીવાર રેન્ડર કરવાનું React ને સૂચવે છે.
-
-* React UI કેવું દેખાવું જોઈએ તે જાણવા માટે `Calculator` કોમ્પોનેન્ટની `render` મેથડને કોલ કરે છે.બંને ઈનપુટસની વેલ્યુ વર્તમાન તાપમાન અને એક્ટિવ સ્કેલના આધારે ફરી ગણવામાં આવે છે. અહી તાપમાનનું રૂપાંતર કરવામાં આવે છે.
-
-* React `Calculator` દ્વારા નિશ્ચિત તેમના નવા પ્રોપ્સ સાથે અલગ અલગ `TemperatureInput` કોમ્પોનેન્ટની `render` મેથડ ને કોલ કરે છે. તે ત્યાં UI કેવું હોવું જોઈએ તે શીખે છે. 
-
-* React સેલ્સિયસમાં તાપમાનને તેના પ્રોપ્સ તરીકે પસાર કરીને,`BoilingVerdict` કોમ્પોનેન્ટની `render` મેથડ ને કોલ કરે છે.
+* React calls the function specified as `onChange` on the DOM `<input>`. In our case, this is the `handleChange` method in the `TemperatureInput` component.
+* The `handleChange` method in the `TemperatureInput` component calls `this.props.onTemperatureChange()` with the new desired value. Its props, including `onTemperatureChange`, were provided by its parent component, the `Calculator`.
+* When it previously rendered, the `Calculator` had specified that `onTemperatureChange` of the Celsius `TemperatureInput` is the `Calculator`'s `handleCelsiusChange` method, and `onTemperatureChange` of the Fahrenheit `TemperatureInput` is the `Calculator`'s `handleFahrenheitChange` method. So either of these two `Calculator` methods gets called depending on which input we edited.
+* Inside these methods, the `Calculator` component asks React to re-render itself by calling `this.setState()` with the new input value and the current scale of the input we just edited.
+* React calls the `Calculator` component's `render` method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.
+* React calls the `render` methods of the individual `TemperatureInput` components with their new props specified by the `Calculator`. It learns what their UI should look like.
+* React calls the `render` method of the `BoilingVerdict` component, passing the temperature in Celsius as its props.
 * React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.
 
 * React DOM `BoilingVerdict` ને ઇચ્છિત ઈનપુટ વેલ્યુ સાથે મેચ કરવા માટે DOM ને અપડેટ કરે છે.આપણે હમણાં ફેરફાર કરેલું ઈનપુટ તેની વર્તમાન વેલ્યુ મેળવે છે, અને અન્ય ઈનપુટને ફેરફાર પછી તાપમાનમાં ફેરવવામાં આવે છે.
