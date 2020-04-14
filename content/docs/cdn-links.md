@@ -6,32 +6,37 @@ prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+React અને ReactDOM બંને CDN ઉપર પણ ઉપલબ્ધ છે.
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+ઉપરના આ વર્જન ખાલી ડેવલપમેન્ટ માટે જ છે, અને તે પ્રોડક્શન માટે યોગ્ય નથી.React ના મિનિફાઇડ અને ઓપટીમાઈઝ્ડ પ્રોડકશન વર્જન અહી ઉપલબ્ધ છે::
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `16` with the version number.
+`react` અને `react-dom` ના ચોક્કસ વર્જન ને લોડ કરવા,વર્જન નંબર ને `16` સાથે બદલો..
+
 
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
+
+જો તમે CDN પરથી React ને ડાઉનલોડ કરો છો તો, અમે આ [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) એટ્રિબ્યુટને સેટ કરવાની સલાહ આપીએ છીએ::
+
 
 ```html
 <script crossorigin src="..."></script>
 ```
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+અમે તમે જે CDN નો ઉપયોગ કરી રહ્યા છો તેનું `Access-Control-Allow-Origin: *` HTTP હેડર ચકાસવાની પણ સલાહ આપીએ છીએ:
+
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+
+આ React 16 અને તેના પછી ને વધુ સારૂ [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) બનાવે છે.

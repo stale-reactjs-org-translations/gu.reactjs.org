@@ -8,29 +8,29 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
-Use as little or as much React as you need.
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need**. Perhaps you only want to add some "sprinkles of interactivity" to an existing page. React components are a great way to do that.
+તમારે જરૂરીયાત હોય તેટલું અથવા તેના કરતાં વધારે react વાપરો.
 
-The majority of websites aren't, and don't need to be, single-page apps. With **a few lines of code and no build tooling**, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+React ને ક્રમશ: અપનાવવા માટે શરૂઆતથી બનાવવામાં આવી છે,અને **you can use as little or as much React as you need**. કદાચ તમે અસ્તિત્વમાનાં પેજ પર
+ "sprinkles of interactivity" એડ કરવા માંગતા હોય તો. React કોમ્પોનેન્ટ એ આમ કરવા માટે સારો રસ્તો છે.
 
+મોટાભાગની વેબસાઇટ્સ સિંગલ-પેજ એપ્લિકેશનો હોતી નથી, અને તે હોવાની જરૂર પણ નથી. **a few lines of code and no build tooling** સાથે, તમારી વેબસાઇટના અમુક ભાગ પર React ને વાપરવાનો પ્રયાસ કરો.પછી ધીમે ધીમે તમે તેની હાજરી ને વધારી શકો છે, અથવા તેને તમે અમુક ડાયનામિક વિજેટ્સમાં સમાવી શકો છો.
 ---
 
 - [Add React in One Minute](#add-react-in-one-minute)
 - [Optional: Try React with JSX](#optional-try-react-with-jsx) (no bundler necessary!)
 
 ## Add React in One Minute {#add-react-in-one-minute}
+ 
+આ ભાગમાં, અમે તમને બતાવી રહ્યા છી કે જૂના HTML પેજમાં React કોમ્પોનેન્ટ કેવી રીતે એડ કરવું. તમે તમારી પોતાની વેબસાઇટ સાથે અનુસરણ કરી શકો, અથવા પ્રેક્ટિસ માટે ખાલી HTML ફાઇલ બનાવી શકો છો.  
 
-In this section, we will show how to add a React component to an existing HTML page. You can follow along with your own website, or create an empty HTML file to practice.
+ત્યાં કોઈ કોમ્પલીકેટેડ ટૂલ્સ કે ઇન્સ્ટોલ ની જરૂરિયાત નથી -- **to complete this section, you only need an internet connection, and a minute of your time.**
 
-There will be no complicated tools or install requirements -- **to complete this section, you only need an internet connection, and a minute of your time.**
-
-Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+ઓપ્શનલ:[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
 
 ### Step 1: Add a DOM Container to the HTML {#step-1-add-a-dom-container-to-the-html}
 
-First, open the HTML page you want to edit. Add an empty `<div>` tag to mark the spot where you want to display something with React. For example:
-
+પ્રથમ,તમારે જે HTML પેજ ને એડિટ કરવાનું હોય તેને ઓપન કરો.જ્યાં તમે React વડે કઇંક બતાવવા માંગો છો તે સ્થાનને સ્પોટ કરવા માટે ખાલી `<div>` ટેગ ઉમેરો. ઉદાહરણ તરીકે 
 ```html{3}
 <!-- ... existing HTML ... -->
 
@@ -39,15 +39,14 @@ First, open the HTML page you want to edit. Add an empty `<div>` tag to mark the
 <!-- ... existing HTML ... -->
 ```
 
-We gave this `<div>` a unique `id` HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.
+અમે આ `<div>` ને યુનિક HTML એટ્રિબ્યુટ `id` આપેલું છે.આ અમને તે પછીથી જાવાસ્ક્રિપ્ટ કોડમાંથી શોધવા અને તેની અંદર React કોમ્પોનેન્ટ ડિસ્પ્લે કરવાની મંજૂરી આપશે.
 
->Tip
+>ટીપ
 >
->You can place a "container" `<div>` like this **anywhere** inside the `<body>` tag. You may have as many independent DOM containers on one page as you need. They are usually empty -- React will replace any existing content inside DOM containers.
-
+> તમે "container" `<div>` ને `<body>` ટેગમાં આની જેમ **anywhere** મૂકી શકો છો.તમે એક પેજ પર તમારે જરૂર હોય તેટલા સ્વત્રંત DOM કન્ટેનર ઉમેરી શકો છો.તે સામાન્ય રીતે ખાલી હોય છે - React DOM કન્ટેનર ની અંદર ગમે તે કન્ટેન્ટને રિપ્લેસ કરી શકે છે.
 ### Step 2: Add the Script Tags {#step-2-add-the-script-tags}
 
-Next, add three `<script>` tags to the HTML page right before the closing `</body>` tag:
+ત્યાર પછી, ત્રણ `<script>` ટેગને HTML પેજમાં `</body>` ટેગ ક્લોઝ થાય તે પેલા ઉમેરો:
 
 ```html{5,6,9}
   <!-- ... other HTML ... -->
@@ -63,19 +62,20 @@ Next, add three `<script>` tags to the HTML page right before the closing `</bod
 </body>
 ```
 
-The first two tags load React. The third one will load your component code.
+પેલી બે ટેગ React ને લોડ કરે છે.અને ત્રીજી ટેગ તમારા કોમ્પોનેન્ટના કોડને લોડ કરે છે.
 
 ### Step 3: Create a React Component {#step-3-create-a-react-component}
 
-Create a file called `like_button.js` next to your HTML page.
+HTML પેજ પછી `like_button.js` નામની ફાઇલ બનાવો.
 
-Open **[this starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** and paste it into the file you created.
+આને **[this starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** ખોલો અને તેને તમે બનાવેલ ફાઈલમાં પેસ્ટ કરો.
 
->Tip
+>ટીપ
 >
->This code defines a React component called `LikeButton`. Don't worry if you don't understand it yet -- we'll cover the building blocks of React later in our [hands-on tutorial](/tutorial/tutorial.html) and [main concepts guide](/docs/hello-world.html). For now, let's just get it showing on the screen!
+>આ કોડમાં Reactનું `LikeButton` નામનું કોમ્પોનેન્ટ ડિફાઇન કરેલ છે. ચિંતા ન કરો જો તમે હમણાં તેને સમજી શકતા નથી -- પછીનાં અમારા [hands-on tutorial](/tutorial/tutorial.html) અને [main concepts guide](/docs/hello-world.html)માં Reactના બિલ્ડીંગ બ્લોક્સને કવર કરી લેશું. હમણાં માટે,
+ચાલો તેને સ્ક્રીન પર બતાવીએ !
 
-After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add two lines to the bottom of `like_button.js`:
+ત્યાર પછી **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, `like_button.js`માં છેલ્લે આ બે લાઇન ઉમેરો:
 
 ```js{3,4}
 // ... the starter code you pasted ...
@@ -84,46 +84,45 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
-These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it. 
-
+આ બે લાઇનનો કોડ પેલા તો `<div>` ને શોધશે જે અમે HTMLમાં એડ કર્યું હતું, અને ત્યાર પછી તેની અંદર React કોમ્પોનેન્ટનું "Like" બટન ડિસ્પ્લે કરશે.
 ### That's It! {#thats-it}
 
-There is no step four. **You have just added the first React component to your website.**
+ત્યાં હવે ચોથુ સ્ટેપ નથી.**You have just added the first React component to your website.**
 
-Check out the next sections for more tips on integrating React.
+React ને ઇન્ટિગ્રેટ કરવા માટેની વધુ ટિપ્સ માટે આગળના વિભાગો તપાસો.
 
 **[View the full example source code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
 **[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
 
 ### Tip: Reuse a Component {#tip-reuse-a-component}
-
-Commonly, you might want to display React components in multiple places on the HTML page. Here is an example that displays the "Like" button three times and passes some data to it:
+ 
+સામાન્ય રીતે,તમે HTML પેજ પર એક થી વધારે સ્થાને React કોમ્પોનેન્ટ ડિસ્પ્લે કરવા માંગો છો. અહિયાં તેનું ઉદાહરણ છે જે 3 વખત "Like" બટન ડિસ્પ્લે કરે છે અને તેમાં થોડો ડેટા પાસ કરે છે:
 
 [View the full example source code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
 [Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
 
->Note
+>નોંધ
 >
->This strategy is mostly useful while React-powered parts of the page are isolated from each other. Inside React code, it's easier to use [component composition](/docs/components-and-props.html#composing-components) instead.
+> આ સ્ટ્રેટજી વધારે ઉપયોગી છે જયારે પેજના React-powered ભાગો એકબીજાથી અલગ છે. React કોડની અંદર,[component composition](/docs/components-and-props.html#composing-components)નો ઉપયોગ કરવો સહેલો છે.
 
 ### Tip: Minify JavaScript for Production {#tip-minify-javascript-for-production}
 
-Before deploying your website to production, be mindful that unminified JavaScript can significantly slow down the page for your users.
+તમારી વેબસાઇટને પ્રોડકશનમાં ડિપ્લોય કરતાં પહેલા, ધ્યાનમાં રાખો કે અનમિનિફાઇડ જાવાસ્ક્રિપ્ટ તમારા યુઝર્સ માટે પેજને નોંધપાત્ર રીતે ધીમું કરી શકે છે.
 
-If you already minify the application scripts, **your site will be production-ready** if you ensure that the deployed HTML loads the versions of React ending in `production.min.js`:
+જો તમે પહેલેથી જ એપ્લિકેશન સ્ક્રિપ્ટને મિનિફાઇ કરેલ છે, **your site will be production-ready** જો તમે એનસ્યોર કરો કે ડિપ્લોય કરેલી HTML `production.min.js` સમાપ્ત થતાં React ના વર્જન લોડ કરે છે:
 
 ```js
 <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
-If you don't have a minification step for your scripts, [here's one way to set it up](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
+જો તમારી પાસે સ્ક્રિપ્ટ મિનીફિકશન માટેના સ્ટેપ નથી તો,[here's one way to set it up](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
 
 ## Optional: Try React with JSX {#optional-try-react-with-jsx}
 
-In the examples above, we only relied on features that are natively supported by the browsers. This is why we used a JavaScript function call to tell React what to display:
+ઉપરના આ ઉદાહરણમાં, અમે ફક્ત એવા ફીચર્સ બતાવ્યા છે જે બ્રાઉઝર દ્વારા મૂળ રૂપે સપોર્ટેડ છે.આથી જ જાવાસ્ક્રિપ્ટ ફંક્શન કોલનો ઉપયોગ કરીને આપણે શું દર્શવાવું તે React ને કહેવામાં આવ્યું છે:
 
 ```js
 const e = React.createElement;
@@ -136,7 +135,7 @@ return e(
 );
 ```
 
-However, React also offers an option to use [JSX](/docs/introducing-jsx.html) instead:
+જોકે, React તેના કરતાં આનો ઉપયોગ કરવાનો પણ [JSX](/docs/introducing-jsx.html) વિકલ્પ આપે છે:
 
 ```js
 // Display a "Like" <button>
@@ -147,56 +146,61 @@ return (
 );
 ```
 
-These two code snippets are equivalent. While **JSX is [completely optional](/docs/react-without-jsx.html)**, many people find it helpful for writing UI code -- both with React and with other libraries.
+આ બંને કોડના સ્નિપેસ્ટ સમાન છે. જ્યારે **JSX is [completely optional](/docs/react-without-jsx.html)**, ઘણા લોકોને આ UI કોડ લખવા માટે મદદ રૂપ લાગે છે --બંને React અને બીજી લાઈબ્રેરી સાથે.
 
 You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
 
+અહીંથી તમે JSX નો ઉપયોગ કરી શકો છો [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
+
 ### Quickly Try JSX {#quickly-try-jsx}
 
-The quickest way to try JSX in your project is to add this `<script>` tag to your page:
+તમારા પ્રોજેકટના પેઝમાં  `<script>` ટેગ ઉમેરવી એ JSX try કરવાની સૌથી ઝડપી રીત છે. 
 
 ```html
+
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
 ```
 
-Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) that you can download and play with.
+હવે તમે `<script>` ટેગમાં `type="text/babel"` એટ્રિબ્યુટનો ઉપયોગ કરીને JSXનો ઉપયોગ કરી શકો છો. અંહીથી તમે [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) તેને ડાઉનલોડ કરી શકો છો.
 
-This approach is fine for learning and creating simple demos. However, it makes your website slow and **isn't suitable for production**. When you're ready to move forward, remove this new `<script>` tag and the `type="text/babel"` attributes you've added. Instead, in the next section you will set up a JSX preprocessor to convert all your `<script>` tags automatically.
+આ એપ્રોચ શીખવા અને સિમ્પલ ડેમો create કરવા માટે સારું છે.જો કે તે તમારી વેબસાઇટને ધીમી બનાવે છે અને **isn't suitable for production**. જ્યારે તમે આગળ વધવા માટે તૈયાર હોવ, ત્યારે તમે એડ કરેલા `<script>` ટેગ અને `type="text/babel"` એટ્રિબ્યુટને રીમુવ કરો. તેના બદલે, આગલા વિભાગમાં તમે તમારા બધા `<script>` ટેગ્સ ને ઓટોમેટિક કન્વર્ટ કરવા માટે JSX પ્રોસેસર સેટ કરશો.
 
 ### Add JSX to a Project {#add-jsx-to-a-project}
 
-Adding JSX to a project doesn't require complicated tools like a bundler or a development server. Essentially, adding JSX **is a lot like adding a CSS preprocessor.** The only requirement is to have [Node.js](https://nodejs.org/) installed on your computer.
+પ્રોજેકટમાં JSX ઉમેરવાથી તેમાં કોમ્પિકેટેડ ટૂલ જેવાકે બન્ડલ અથવા ડેવલપમેન્ટ સર્વરની જરૂર પડતી નથી.જરૂરિયાત મુજબ ,JSX ઉમેરવાથી **is a lot like adding a CSS preprocessor.** તમારા કમ્યુટર પર એકમાત્ર [Node.js](https://nodejs.org/) ઇનસ્ટોલ કરવાની આવશ્યકતા છે.
 
-Go to your project folder in the terminal, and paste these two commands:
+ટર્મિનલમાંથી તમારા પ્રોજેકટ ફોલ્ડરમાં જાઓ, અને આ બે કમાન્ડ પેસ્ટ કરો:
 
-1. **Step 1:** Run `npm init -y` (if it fails, [here's a fix](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
-2. **Step 2:** Run `npm install babel-cli@6 babel-preset-react-app@3`
+1. **Step 1:** `npm init -y` રન કરો (જો તે નિષ્ફળ થાય તો [here's a fix](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
+2. **Step 2:** `npm install babel-cli@6 babel-preset-react-app@3` રન કરો
 
->Tip
+>ટીપ
 >
->We're **using npm here only to install the JSX preprocessor;** you won't need it for anything else. Both React and the application code can stay as `<script>` tags with no changes.
+>આપણે **using npm here only to install the JSX preprocessor;** તમારે તેની બીજા કોઇ કામ માટે જરૂર નહીં પડે. React અને એપ્લીકેશન કોડ એમ બંને  કોઈ ફેરફાર વગર `<script>` તરીકે રહેશે.
 
-Congratulations! You just added a **production-ready JSX setup** to your project.
-
+અભિનંદન! તમે તમારા પ્રોજેકટમાં હમણાં જ **production-ready JSX setup**  ઉમેર્યું છે.
 
 ### Run JSX Preprocessor {#run-jsx-preprocessor}
 
-Create a folder called `src` and run this terminal command:
-
+`src` નામનું ફોલ્ડર બનાવો અને આ ટર્મિનલ કમાન્ડ રન કરો::
 ```
 npx babel --watch src --out-dir . --presets react-app/prod 
 ```
 
->Note
+>નોંધ 
 >
->`npx` is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+> `npx` એ ટાયપો નથી -- તે આ [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) છે.
+
+>જો તમને એરર મેસેજ મળતો હોય જેમાં કહેલું હોય કે "You have mistakenly installed the `babel` package", તો તમે કદાચ પેલું સ્ટેપ ભૂલી ગયા છો    [the previous step]. તેને સેમ ફોલ્ડરમાં પરફોર્મ કરો, અને પાછો પ્રયાસ કરો.
 >
->If you see an error message saying "You have mistakenly installed the `babel` package", you might have missed [the previous step](#add-jsx-to-a-project). Perform it in the same folder, and then try again.
 
-Don't wait for it to finish -- this command starts an automated watcher for JSX.
+તેના સમાપ્ત થવા માટેની રાહ ન જોવો -- આ કમાન્ડ JSX માટે ઓટોમેટેડ વોચર ચાલુ કરે છે.
 
-If you now create a file called `src/like_button.js` with this **[JSX starter code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, the watcher will create a preprocessed `like_button.js` with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.
+જો તમે હવે આ `src/like_button.js` નામની ફાઇલ બનાવો છો આની સાથે **[JSX starter code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, તો વોચર બ્રાઉઝર માટે યોગ્ય એવા સાદા જાવાસ્ક્રિપ્ટ કોડ સાથે પ્રિપ્રોસેસ્ડ `like_button.js` બનાવશે.
 
-As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from [its documentation](https://babeljs.io/docs/en/babel-cli/).
+બોનસ તરીકે, આ જૂના બ્રાઉઝરની ચિંતા કર્યા વગર તમને મોર્ડન જાવાસ્ક્રિપ્ટ સિન્ટેક્સ સુવિધાઓનો ઉપયોગ કરવા દે છે.આપણે હમણાં જે ટૂલ વાપર્યુ તેને બેબલ કહે છે, અને તમે તેના વિષે અહીંથી [its documentation](https://babeljs.io/docs/en/babel-cli/) વધારે જાણી શકો છો.
 
 If you notice that you're getting comfortable with build tools and want them to do more for you, [the next section](/docs/create-a-new-react-app.html) describes some of the most popular and approachable toolchains. If not -- those script tags will do just fine!
+
+જો તમે નોટિસ કર્યું હોય કે તમે હવે બિલ્ડ ટૂલ્સ થી કમ્ફર્ટેબલ છો અને તમે તેમાં આગળ વધી શકો છો, તો અહીં [the next section](/docs/create-a-new-react-app.html) કેટલીક સૌથી વધુ પ્રચલિત અને એપ્રોચ કરવા યોગ્ય ટૂલ ચેનનું વર્ણન કરેલ છે. જો ના -- તો આ સ્ક્રિપ્ટ ટેગ તમારા માટે સારું છે!
