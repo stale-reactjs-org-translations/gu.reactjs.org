@@ -177,8 +177,8 @@ const element = {
 
 આ ઑબ્જેક્ટ્સને "React elements" કહેવામાં આવે છે. તમે તેમનો આ રીતે વિચાર કરી શકો છો કે સ્ક્રીન પર તમે જે જોવા માંગો છો તે તેનું વર્ણન છે. React આ ઓબ્જેક્ટો વાંચે છે અને DOM બનાવવા અને તેને અપ ટુ ડેટ રાખવા માટે તેનો ઉપયોગ કરે છે.
 
-અમે આગલા વિભાગમાં DOM પર React elements રેન્ડર કરતા શીખીશું.
+આપણે [આગલા વિભાગમાં](/docs/rendering-elements.html) DOM પર React elements રેન્ડર કરતા શીખીશું.
 
 >**ટિપ:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>અમે તમારા પસંદગીના એડિટર માટે ["babel" language definition](https://babeljs.io/docs/editors) નો ઉપયોગ કરવાની ભલામણ કરીએ છીએ જેથી ES6 અને JSX કોડ બંને યોગ્ય રીતે હાઈલાઈટ થઇ શકે.
