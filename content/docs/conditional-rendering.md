@@ -121,11 +121,15 @@ ReactDOM.render(
 
 જ્યારે કોઈ વેરીએબલ જાહેર કરવું અને `if` સ્ટેટમેન્ટનો ઉપયોગ કરવો એ શરતી રૂપે કોમ્પોનેન્ટ ને રેન્ડર કરવા માટે એક સરસ રીત છે, કેટલીકવાર તમે ટૂંકા વાક્યરચનાનો ઉપયોગ કરી શકો છો. નીચે જણાવેલ jsx માં શરતોને ઇનલાઇન કરવાના કેટલાક રસ્તાઓ છે.
 
+<<<<<<< HEAD
 
 ### ઇનલાઇન ઇફ લોજિકલ && ઓપરેટર સાથે {#inline-if-with-logical--operator}
 
 
 તમે [jsx માં કોઈપણ એક્સપ્રેસ્સ્ન એમ્બેડ કરી શકો છો] (/docs/introducing-jsx.html#embedding-expressions-in-jsx) તેમને કર્લી કૌંસમાં લપેટીને. આમાં જાવાસ્ક્રિપ્ટ લોજિકલ `&&` ઓપરેટર શામેલ છે. તે એલિમેન્ટ સહિતના શરતી સ્થિતિ માટે સરળ હોઈ શકે છે:
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 63332462bb5afa18ac7a716975b679f4c23cc8a1
 
 ```js{6-10}
 function Mailbox(props) {
