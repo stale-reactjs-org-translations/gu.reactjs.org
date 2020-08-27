@@ -13,26 +13,26 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` is the entry point to the React library. If you load React from a `<script>` tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+`React` એ React પુસ્તકાલયનો પ્રવેશ પોઇન્ટ છે. જો તમે React `<script>` ટેગ પરથી લોડ કરો છો, તો આ top-level APIs `React` global પર ઉપલબ્ધ છે. જો તમે npm સાથે ES6 ઉપયોગ કરો છો, તો તમે `import React from 'react'` લખી શકો છો. જો તમે npm સાથે ES5 ઉપયોગ કરો છો, તો તમે `var React = require('react')` લખી શકો છો.
 
-## Overview {#overview}
+## ઓવરવ્યૂ {#overview}
 
 ### Components {#components}
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
+React components તમને UI ને સ્વતંત્ર, રીયુઝએબલ ટુકડાઓમાં વહેંચવા દે છે, અને દરેક ટુકડા વિશે એકાંતમાં વિચારવા દે છે. React components ને `React.Component` અથવા `React.PureComponent` સબક્લાસીંગ મા ડીફાઇન કરી શકાય છે.
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-If you don't use ES6 classes, you may use the `create-react-class` module instead. See [Using React without ES6](/docs/react-without-es6.html) for more information.
+જો તમે ES6 ક્લાસીસ નો ઉપયોગ કરતા નથી, તો તમે તેના બદલે `create-react-class` મોડ્યુલનો ઉપયોગ કરી શકો છો. વધુ માહિતી માટે [React ES6 વિના વાપરવું](/docs/react-without-es6.html) એ જુઓ.
 
-React components can also be defined as functions which can be wrapped:
+React components ને ફંકશન્સ તરીકે પણ ડીફાઇન કરી શકાય છે જે આવરિત કરેલું છે:
 
 - [`React.memo`](#reactmemo)
 
-### Creating React Elements {#creating-react-elements}
+### React Elements બનાવવા {#creating-react-elements}
 
-We recommend [using JSX](/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
+અમે [JSX વાપરવા](/docs/introducing-jsx.html) ભલામણ કરીએ છીએ તમારું UI કેવું હોવું જોઈએ તે વર્ણવવા. દરેક JSX element ફક્ત સિન્ટેક્ટિક સુગર છે [`React.createElement()`](#createelement) કોલ કરવા માટે. You will not typically invoke the following methods directly if you are using JSX.
 
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
