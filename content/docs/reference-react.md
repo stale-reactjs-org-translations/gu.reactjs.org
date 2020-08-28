@@ -28,52 +28,52 @@ React components તમને UI ને સ્વતંત્ર, રીયુ�
 
 React components ને ફંકશન્સ તરીકે પણ ડીફાઇન કરી શકાય છે જે આવરિત કરેલું છે:
 
-- [`React.memo`](#reactmemo)
+- [`React.મેમો`](#reactmemo)
 
 ### React Elements બનાવવા {#creating-react-elements}
 
-અમે [JSX વાપરવા](/docs/introducing-jsx.html) ભલામણ કરીએ છીએ તમારું UI કેવું હોવું જોઈએ તે વર્ણવવા. દરેક JSX element ફક્ત સિન્ટેક્ટિક સુગર છે [`React.createElement()`](#createelement) કોલ કરવા માટે. You will not typically invoke the following methods directly if you are using JSX.
+અમે [JSX વાપરવા](/docs/introducing-jsx.html) ભલામણ કરીએ છીએ તમારું UI કેવું હોવું જોઈએ તે વર્ણવવા. દરેક JSX element [`React.createElement()`](#createelement) કોલ કરવા માટે ફક્ત સિન્ટેક્ટિક સુગર છે. જો તમે JSX નો ઉપયોગ કરી રહ્યાં હોવ તો સામાન્ય રીતે તમારે નીચેની પદ્ધતિઓ ઈન્વોક કરવો નહીં.
 
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
-See [Using React without JSX](/docs/react-without-jsx.html) for more information.
+વધુ માહિતી માટે [React JSX વિના વાપરવું](/docs/react-without-jsx.html) એ જુઓ.
 
-### Transforming Elements {#transforming-elements}
+### Elements પરિવર્તન કરવા {#transforming-elements}
 
-`React` provides several APIs for manipulating elements:
+`React` થોડી APIs આપે છે elements બદલવા:
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
 - [`React.Children`](#reactchildren)
 
-### Fragments {#fragments}
+### ફ્રેગમેન્ટ્સ {#fragments}
 
-`React` also provides a component for rendering multiple elements without a wrapper.
+`React` રેપર વિના પણ ઘણા elements રેન્ડર કરવા એક component આપે છે.
 
-- [`React.Fragment`](#reactfragment)
+- [`React.ફ્રેગમેન્ટ્`](#reactfragment)
 
 ### Refs {#refs}
 
 - [`React.createRef`](#reactcreateref)
 - [`React.forwardRef`](#reactforwardref)
 
-### Suspense {#suspense}
+### સસ્પેન્સ {#suspense}
 
-Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with `React.lazy`](/docs/code-splitting.html#reactlazy). In the future, it will support other use cases like data fetching.
+સસ્પેન્સ કંઇક રેન્ડર કરતા પહેલા components ને "રાહ" જોવા દે છે. આજે, સસ્પેન્સ ફક્ત એક જ યુઝ કેસ ને સપોર્ટ કરે છે: [`React.લેઝી` થી ડાઈનામેટીકલી components લોડ કરવા](/docs/code-splitting.html#reactlazy). ભવિષ્યમાં, તે ડેટા ફૅચિંગ જેવા અન્ય યુઝ કેસીસ ને સપોર્ટ કરશે.
 
-- [`React.lazy`](#reactlazy)
-- [`React.Suspense`](#reactsuspense)
+- [`React.લેઝી`](#reactlazy)
+- [`React.સસ્પેન્સ`](#reactsuspense)
 
-### Hooks {#hooks}
+### હુક્સ {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*હુક્સ* React 16.8 માં એક નવો ઉમેરો છે. તેઓ તમને ક્લાસ લખ્યા વિના સ્ટેટ અને અન્ય React ફીચર્સ ઉપયોગ કરવા દે છે. હુક્સ ની એક [સમર્પિત માર્ગદર્શિકા વિભાગ](/docs/hooks-intro.html) અને એક અલગ API રેફરન્સ છે:
 
-- [Basic Hooks](/docs/hooks-reference.html#basic-hooks)
+- [પાયાના હુક્સ](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
   - [`useEffect`](/docs/hooks-reference.html#useeffect)
   - [`useContext`](/docs/hooks-reference.html#usecontext)
-- [Additional Hooks](/docs/hooks-reference.html#additional-hooks)
+- [વધારાના હુક્સ](/docs/hooks-reference.html#additional-hooks)
   - [`useReducer`](/docs/hooks-reference.html#usereducer)
   - [`useCallback`](/docs/hooks-reference.html#usecallback)
   - [`useMemo`](/docs/hooks-reference.html#usememo)
@@ -84,11 +84,11 @@ Suspense lets components "wait" for something before rendering. Today, Suspense 
 
 * * *
 
-## Reference {#reference}
+## રેફરન્સ {#reference}
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+`React.Component` એ React components નો બેઝ ક્લાસ છે જ્યારે તેને [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) સાથે ડીફાઇન કરેલું હોય:
 
 ```javascript
 class Greeting extends React.Component {
@@ -98,25 +98,25 @@ class Greeting extends React.Component {
 }
 ```
 
-See the [React.Component API Reference](/docs/react-component.html) for a list of methods and properties related to the base `React.Component` class.
+બેઝ `React.Component` ક્લાસથી સંબંધિત મેથડ્સ અને પ્રોપર્ટીઝની સૂચિ માટે [React.Component API રેફરન્સ](/docs/react-component.html) જુઓ.
 
 * * *
 
 ### `React.PureComponent` {#reactpurecomponent}
 
-`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison.
+`React.PureComponent` એ [`React.Component`](#reactcomponent) જેવું છે. તેમની વચ્ચેનો તફાવત એ છે કે [`React.Component`](#reactcomponent) [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) ઈમ્પ્લીમેન્ટ કરતુ નથી, પરંતુ `React.PureComponent` તેને શૅલૉ પ્રોપ અને સ્ટેટ સરખામણીથી ઈમ્પ્લીમેન્ટ કરે છે.
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+જો તમારા React component નુ `render()` ફંક્શન સમાન પ્રોપ્સ અને સ્ટેટ જોતા સમાન પરિણામ આપે છે, તમે કેટલાક કેસોમાં પ્રભાવ વધારવા માટે `React.PureComponent` નો ઉપયોગ કરી શકો છો.
 
-> Note
+> નોંધ
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> `React.PureComponent` ની `shouldComponentUpdate()` ફક્ત ઓબ્જેક્ટની શેલોલી તુલના કરે છે. જો આમાં જટિલ ડેટા સ્ટ્રક્ચર્સ શામેલ છે, તો તે ઊંડા તફાવતો માટે ફોલ્સ-નેગેટીવ્સ પેદા કરી શકે છે. જો તમારી પાસે સરળ પ્રોપ્સ અને સ્ટેટની અપેક્ષા હોય ત્યારે ફક્ત `PureComponent` એક્સટેન્ડ કરવું, અથવા જ્યારે તમે જાણો છો કે ઊંડા જટિલ ડેટા સ્ટ્રક્ચર્સ બદલાયા છે ત્યારે [`forceUpdate()`](/docs/react-component.html#forceupdate) નો ઉપયોગ કરો. અથવા, પુનરાવર્તિત ડેટાની ઝડપી તુલનાને સુવિધા આપવા માટે [અપરિવર્તીત ઓબ્જેક્ટસ](https://facebook.github.io/immutable-js/) નો ઉપયોગ કરો.
 >
-> Furthermore, `React.PureComponent`'s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also "pure".
+> તદુપરાંત, `React.PureComponent` ની `shouldComponentUpdate()` પુરી component સબટ્રી માટે પ્રોપ અપડેટ્સ છોડે છે. ખાતરી કરો કે બધા ચિલ્ડ્રન components પણ "પ્યોર" છે.
 
 * * *
 
-### `React.memo` {#reactmemo}
+### `React.મેમો` {#reactmemo}
 
 ```javascript
 const MyComponent = React.memo(function MyComponent(props) {
@@ -124,11 +124,11 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.મેમો` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+If your function component renders the same result given the same props, you can wrap it in a call to `React.મેમો` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
 
-`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
+`React.મેમો` only checks for prop changes. If your function component wrapped in `React.મેમો` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
 
 By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
 
