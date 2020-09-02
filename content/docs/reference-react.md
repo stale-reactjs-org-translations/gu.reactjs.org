@@ -13,7 +13,7 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` એ React પુસ્તકાલયનો પ્રવેશ પોઇન્ટ છે. જો તમે React `<script>` ટેગ પરથી લોડ કરો છો, તો આ top-level APIs `React` global પર ઉપલબ્ધ છે. જો તમે npm સાથે ES6 ઉપયોગ કરો છો, તો તમે `import React from 'react'` લખી શકો છો. જો તમે npm સાથે ES5 ઉપયોગ કરો છો, તો તમે `var React = require('react')` લખી શકો છો.
+`React` એ React પુસ્તકાલયનો પ્રવેશ પોઇન્ટ છે. જો તમે React `<script>` ટેગ પરથી લોડ કરો છો, તો આ top-level APIs `React` ગ્લોબલ પર ઉપલબ્ધ છે. જો તમે npm સાથે ES6 ઉપયોગ કરો છો, તો તમે `import React from 'react'` લખી શકો છો. જો તમે npm સાથે ES5 ઉપયોગ કરો છો, તો તમે `var React = require('react')` લખી શકો છો.
 
 ## ઓવરવ્યૂ {#overview}
 
@@ -45,7 +45,7 @@ React components ને ફંકશન્સ તરીકે પણ ડીફ�
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
-- [`React.Children`](#reactchildren)
+- [`React.ચિલ્ડ્રન`](#reactchildren)
 
 ### ફ્રેગમેન્ટ્સ {#fragments}
 
@@ -106,7 +106,7 @@ class Greeting extends React.Component {
 
 `React.PureComponent` એ [`React.Component`](#reactcomponent) જેવું છે. તેમની વચ્ચેનો તફાવત એ છે કે [`React.Component`](#reactcomponent) [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) ઈમ્પ્લીમેન્ટ કરતુ નથી, પરંતુ `React.PureComponent` તેને શૅલૉ પ્રોપ અને સ્ટેટ સરખામણીથી ઈમ્પ્લીમેન્ટ કરે છે.
 
-જો તમારા React component નુ `render()` ફંક્શન સમાન પ્રોપ્સ અને સ્ટેટ જોતા સમાન પરિણામ આપે છે, તમે કેટલાક કેસોમાં પ્રભાવ વધારવા માટે `React.PureComponent` નો ઉપયોગ કરી શકો છો.
+જો તમારા React component નુ `render()` ફંક્શન સમાન પ્રોપ્સ અને સ્ટેટ જોતા સમાન પરિણામ આપે છે, તો તમે કેટલાક કેસોમાં પ્રભાવ વધારવા માટે `React.PureComponent` નો ઉપયોગ કરી શકો છો.
 
 > નોંધ
 >
@@ -124,13 +124,13 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.મેમો` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.મેમો` એ એક [ઉચ્ચ ક્રમ component](/docs/higher-order-components.html) છે. તે [`React.PureComponent`](#reactpurecomponent) જેવું છે પણ કલાસીસના બદલે ફંકશન માટે છે.
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.મેમો` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+જો તમારું ફંકશન component સમાન પ્રોપ્સ અને સ્ટેટ જોતા સમાન પરિણામ રેન્ડર કરે છે, તો તમે કેટલાક કેસોમાં પ્રભાવ વધારવા માટે `React.મેમો` નો ઉપયોગ પરિણામ સંસ્મરણ દ્વારા કરી શકો છો. આનો અર્થ એ છે કે React component ને રેન્ડર કરવાનું છોડશે, અને છેલ્લા રેન્ડર કરેલા પરિણામનો ફરીથી ઉપયોગ કરશે.
 
-`React.મેમો` only checks for prop changes. If your function component wrapped in `React.મેમો` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
+`React.મેમો` ફક્ત પ્રોપ ચેન્જીસ ચેક કરે છે. જો તમારા `React.મેમો` માં આવરિત ફંકશન component પાસે એક [`useState`](/docs/hooks-state.html) અથવા [`useContext`](/docs/hooks-reference.html#usecontext) હુક એના ઈમ્પ્લીમેન્ટેશનમાં છે, તો તે રીરેન્ડર થશે જયારે સ્ટેટ અથવા કોન્ટેક્સટ બદલાશે.
 
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+તે મૂળભૂત રીતે પ્રોપ્સ ઓબ્જેક્ટમાં ફક્ત જટિલ ઓબ્જેક્ટ્સની શેલોલી તુલના કરે છે. જો તમે તુલના પર નિયંત્રણ રાખવા માંગો છો, તો તમે બીજા આર્ગ્યુમેન્ટમાં કસ્ટમ તુલનાત્મક ફંકશન આપી પણ શકો છો.
 
 ```javascript
 function MyComponent(props) {
@@ -146,11 +146,11 @@ function areEqual(prevProps, nextProps) {
 export default React.memo(MyComponent, areEqual);
 ```
 
-This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a render, as this can lead to bugs.
+આ મેથડ ફક્ત એક **[પરફોર્મન્સ ઓપ્ટિમાઇઝેશન](/docs/optimizing-performance.html)** તરીકે અસ્તિત્વમાં છે. રેન્ડરને "અટકાવવા" માટે તેના પર આધાર રાખશો નહીં, કારણ કે આ બગ્સ તરફ દોરી શકે છે.
 
-> Note
+> નોંધ
 >
-> Unlike the [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) method on class components, the `areEqual` function returns `true` if the props are equal and `false` if the props are not equal. This is the inverse from `shouldComponentUpdate`.
+> કલાસ components પર [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) મેથડથી વિપરીત, `areEqual` ફંકશન `true` રિટર્ન કરશે જો પ્રોપ્સ સમાન હોય અને `false` જો પ્રોપ્સ સમાન ના હોય. આ `shouldComponentUpdate`થી વિપરિત છે.
 
 * * *
 
@@ -164,7 +164,7 @@ React.createElement(
 )
 ```
 
-Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React ફ્રેગમેન્ટ્](#reactfragment) type.
 
 Code written with [JSX](/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
 
@@ -180,7 +180,7 @@ React.cloneElement(
 )
 ```
 
-Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved.
+Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New ચિલ્ડ્રન will replace existing ચિલ્ડ્રન. `key` and `ref` from the original element will be preserved.
 
 `React.cloneElement()` is almost equivalent to:
 
@@ -200,7 +200,7 @@ This API was introduced as a replacement of the deprecated `React.addons.cloneWi
 React.createFactory(type)
 ```
 
-Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React ફ્રેગમેન્ટ્](#reactfragment) type.
 
 This helper is considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
 
@@ -218,67 +218,67 @@ Verifies the object is a React element. Returns `true` or `false`.
 
 * * *
 
-### `React.Children` {#reactchildren}
+### `React.ચિલ્ડ્રન` {#reactchildren}
 
-`React.Children` provides utilities for dealing with the `this.props.children` opaque data structure.
+`React.ચિલ્ડ્રન` `this.props.ચિલ્ડ્રન` સાથેના અપારદર્શક ડેટા સ્ટ્રક્ચર વ્યવહાર માટે ઉપયોગિતાઓ આપે છે.
 
-#### `React.Children.map` {#reactchildrenmap}
+#### `React.ચિલ્ડ્રન.મેપ` {#reactchildrenmap}
 
 ```javascript
 React.Children.map(children, function[(thisArg)])
 ```
 
-Invokes a function on every immediate child contained within `children` with `this` set to `thisArg`. If `children` is an array it will be traversed and the function will be called for each child in the array. If children is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
+Invokes a function on every immediate child contained within `ચિલ્ડ્રન` with `this` set to `thisArg`. If `ચિલ્ડ્રન` is an array it will be traversed and the function will be called for each child in the array. If ચિલ્ડ્રન is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
 
 > Note
 >
-> If `children` is a `Fragment` it will be treated as a single child and not traversed.
+> If `ચિલ્ડ્રન` is a `ફ્રેગમેન્ટ્` it will be treated as a single child and not traversed.
 
-#### `React.Children.forEach` {#reactchildrenforeach}
+#### `React.ચિલ્ડ્રન.forEach` {#reactchildrenforeach}
 
 ```javascript
 React.Children.forEach(children, function[(thisArg)])
 ```
 
-Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
+[`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap) જેવું પણ array રિટર્ન ના કરે.
 
-#### `React.Children.count` {#reactchildrencount}
+#### `React.ચિલ્ડ્રન.count` {#reactchildrencount}
 
 ```javascript
 React.Children.count(children)
 ```
 
-Returns the total number of components in `children`, equal to the number of times that a callback passed to `map` or `forEach` would be invoked.
+Returns the total number of components in `ચિલ્ડ્રન`, equal to the number of times that a callback passed to `મેપ` or `forEach` would be invoked.
 
-#### `React.Children.only` {#reactchildrenonly}
+#### `React.ચિલ્ડ્રન.only` {#reactchildrenonly}
 
 ```javascript
 React.Children.only(children)
 ```
 
-Verifies that `children` has only one child (a React element) and returns it. Otherwise this method throws an error.
+Verifies that `ચિલ્ડ્રન` has only one child (a React element) and returns it. Otherwise this method throws an error.
 
 > Note:
 >
->`React.Children.only()` does not accept the return value of [`React.Children.map()`](#reactchildrenmap) because it is an array rather than a React element.
+>`React.ચિલ્ડ્રન.only()` does not accept the return value of [`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap) because it is an array rather than a React element.
 
-#### `React.Children.toArray` {#reactchildrentoarray}
+#### `React.ચિલ્ડ્રન.toArray` {#reactchildrentoarray}
 
 ```javascript
 React.Children.toArray(children)
 ```
 
-Returns the `children` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice `this.props.children` before passing it down.
+Returns the `ચિલ્ડ્રન` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of ચિલ્ડ્રન in your render methods, especially if you want to reorder or slice `this.props.ચિલ્ડ્રન` before passing it down.
 
 > Note:
 >
-> `React.Children.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
+> `React.ચિલ્ડ્રન.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of ચિલ્ડ્રન. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
 
 * * *
 
-### `React.Fragment` {#reactfragment}
+### `React.ફ્રેગમેન્ટ્` {#reactfragment}
 
-The `React.Fragment` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
+The `React.ફ્રેગમેન્ટ્` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
 
 ```javascript
 render() {
@@ -291,7 +291,7 @@ render() {
 }
 ```
 
-You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for Fragments](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
+You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for ફ્રેગમેન્ટ્સ](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
 
 
 ### `React.createRef` {#reactcreateref}
