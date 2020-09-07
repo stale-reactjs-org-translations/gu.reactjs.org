@@ -164,9 +164,9 @@ React.createElement(
 )
 ```
 
-Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React ફ્રેગમેન્ટ્](#reactfragment) type.
+આપેલ પ્રકારનું એક નવું [React element](/docs/rendering-elements.html) બનાવો અને રિટર્ન કરો. ટાઈપ આર્ગ્યુમેન્ટ કાં તો એક ટેગ નામની સ્ટ્રીંગ (જેમ કે `'div'` અથવા `'span'`), એક [React component](/docs/components-and-props.html) ટાઈપ (એક ક્લાસ અથવા એક ફંકશન), અથવા એક [React ફ્રેગમેન્ટ્](#reactfragment) ટાઈપ હોય શકે.
 
-Code written with [JSX](/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+[JSX](/docs/introducing-jsx.html) સાથે લખેલા કોડને `React.createElement()` ઉપયોગ કરવા માટે બદલવામાં આવશે. જો તમે JSX ઉપયોગ કરો છો, તો તમે સીધું ખાસ કરીને `React.createElement()` ઈન્વોક ના કરો. વધુ માહિતી માટે [React JSX વિના વાપરવું](/docs/react-without-jsx.html) એ જુઓ.
 
 * * *
 
@@ -180,17 +180,17 @@ React.cloneElement(
 )
 ```
 
-Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New ચિલ્ડ્રન will replace existing ચિલ્ડ્રન. `key` and `ref` from the original element will be preserved.
+ સ્ટાર્ટિંગ પોઇન્ટ તરીકે `element` થી એક નવું React element ક્લોન અને રિટર્ન કરો. પરિણામી element ને મૂળ element ની પ્રોપ્સ સાથે નવા પ્રોપ્સ જોડે શેલોલી મર્જ થશે. નવા ચિલ્ડ્રન હાલના ચિલ્ડ્રન બદલશે. `key` અને `ref` મૂળ element ના સાચવેલા રહેશે.
 
-`React.cloneElement()` is almost equivalent to:
+`React.cloneElement()` લગભગ સમાન છે:
 
 ```js
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element.
+પણ, તે `ref` ને પણ સાચવી રાખે છે. આનો અર્થ એ છે કે જો તમને કોઈ ચાઈલ્ડ તેના પર `ref` મળે છે, તો તમે તેને આકસ્મિક રીતે તમારા પૂર્વજ પાસેથી ચોરી નહીં કરો. તમને તમારા નવા element માં સમાન `ref` જોડાયેલ મળશે.
 
-This API was introduced as a replacement of the deprecated `React.addons.cloneWithProps()`.
+આ API નકારેલા `React.addons.cloneWithProps()` ની બદલીમાં રજુઆત થયેલું હતું.
 
 * * *
 
