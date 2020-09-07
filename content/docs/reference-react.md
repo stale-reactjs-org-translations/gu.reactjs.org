@@ -200,11 +200,11 @@ React.cloneElement(
 React.createFactory(type)
 ```
 
-Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React ફ્રેગમેન્ટ્](#reactfragment) type.
+આપેલ ટાઈપ React elements ઉત્પન્ન કરતું ફંક્શન રિટર્ન કરો. [`React.createElement()`](#createelement) ની જેમ, ટાઈપ આર્ગ્યુમેન્ટ કાં તો એક ટેગ નામની સ્ટ્રીંગ (જેમ કે `'div'` અથવા `'span'`), એક [React component](/docs/components-and-props.html) ટાઈપ (એક ક્લાસ અથવા એક ફંકશન), અથવા એક [React ફ્રેગમેન્ટ્](#reactfragment) ટાઈપ હોય શકે.
 
-This helper is considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
+આ હેલ્પર લેગસી માનવામાં આવે છે, અને અમે તમને કાં તો JSX અથવા `React.createElement()` સીધું વાપરવા પ્રોત્સાહિત કરીએ છીએ.
 
-You will not typically invoke `React.createFactory()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+જો તમે JSX ઉપયોગ કરો છો, તો તમે સીધું ખાસ કરીને `React.createElement()` ઈન્વોક ના કરો. વધુ માહિતી માટે [React JSX વિના વાપરવું](/docs/react-without-jsx.html) એ જુઓ.
 
 * * *
 
@@ -214,7 +214,7 @@ You will not typically invoke `React.createFactory()` directly if you are using 
 React.isValidElement(object)
 ```
 
-Verifies the object is a React element. Returns `true` or `false`.
+ઓબ્જેક્ટ એક React element છે એની ચકાસણી કરે છે. `true` અથવા `false` રિટર્ન કરે છે.
 
 * * *
 
