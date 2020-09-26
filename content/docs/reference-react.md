@@ -228,11 +228,11 @@ React.isValidElement(object)
 React.Children.map(children, function[(thisArg)])
 ```
 
-Invokes a function on every immediate child contained within `ચિલ્ડ્રન` with `this` set to `thisArg`. If `ચિલ્ડ્રન` is an array it will be traversed and the function will be called for each child in the array. If ચિલ્ડ્રન is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
+`ચિલ્ડ્રન` ની અંદર સમાયેલ દરેક તાત્કાલિક ચાઈલ્ડ પર `this`ને `thisArg` જોડે સેટ કરીને એક ફંકશન ઈન્વોક કરે છે. જો `ચિલ્ડ્રન` એક એરે છે તો તે ટ્રાવર્સ કરે છે અને એરેના દરેક ચાઈલ્ડ માટે ફંક્શન કોલ કરે છે. જો ચિલ્ડ્રન `નલ` અથવા `અંડિફાઈન્ડ` છે, આ મેથડ એરેના બદલે `નલ` અથવા `અંડિફાઈન્ડ` રિટર્ન કરે છે.
 
-> Note
+> નોંધ
 >
-> If `ચિલ્ડ્રન` is a `ફ્રેગમેન્ટ્` it will be treated as a single child and not traversed.
+> જો `ચિલ્ડ્રન` એક `ફ્રેગમેન્ટ્` છે તો તે એકલા ચાઈલ્ડની જેમ વર્તાશે અને ટ્રાવર્સ નહિ થાય.
 
 #### `React.ચિલ્ડ્રન.forEach` {#reactchildrenforeach}
 
@@ -240,7 +240,7 @@ Invokes a function on every immediate child contained within `ચિલ્ડ્
 React.Children.forEach(children, function[(thisArg)])
 ```
 
-[`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap) જેવું પણ array રિટર્ન ના કરે.
+[`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap) જેવું પણ એરે રિટર્ન ના કરે.
 
 #### `React.ચિલ્ડ્રન.count` {#reactchildrencount}
 
@@ -248,7 +248,7 @@ React.Children.forEach(children, function[(thisArg)])
 React.Children.count(children)
 ```
 
-Returns the total number of components in `ચિલ્ડ્રન`, equal to the number of times that a callback passed to `મેપ` or `forEach` would be invoked.
+`ચિલ્ડ્રન`માં components ની કુલ સંખ્યા રિટર્ન કરે છે, `મેપ`ને પસાર કરેલા callbackની સંખ્યા બરાબર અથવા `forEach` ઈન્વોક થશે.
 
 #### `React.ચિલ્ડ્રન.only` {#reactchildrenonly}
 
@@ -256,11 +256,11 @@ Returns the total number of components in `ચિલ્ડ્રન`, equal to t
 React.Children.only(children)
 ```
 
-Verifies that `ચિલ્ડ્રન` has only one child (a React element) and returns it. Otherwise this method throws an error.
+`ચિલ્ડ્રન`ને ફક્ત એક ચાઈલ્ડ (એક React element) છે તેની ચકાસણી કરે છે અને રિટર્ન કરે છે. અન્યથા આ મેથડ એરર થ્રો કરે છે.
 
-> Note:
+> નોંધ:
 >
->`React.ચિલ્ડ્રન.only()` does not accept the return value of [`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap) because it is an array rather than a React element.
+>`React.ચિલ્ડ્રન.only()` એ [`React.ચિલ્ડ્રન.મેપ()`](#reactchildrenmap)ની રિટર્ન વૅલ્યુ સ્વીકારતું નથી કારણ કે તે એક React element ના બદલે એક એરે છે.
 
 #### `React.ચિલ્ડ્રન.toArray` {#reactchildrentoarray}
 
