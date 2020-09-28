@@ -268,17 +268,17 @@ React.Children.only(children)
 React.Children.toArray(children)
 ```
 
-Returns the `ચિલ્ડ્રન` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of ચિલ્ડ્રન in your render methods, especially if you want to reorder or slice `this.props.ચિલ્ડ્રન` before passing it down.
+દરેક ચાઈલ્ડને સોંપેલી કી સાથે એક ફ્લેટ એરેની જેમ `ચિલ્ડ્રન` અપારદર્શક ડેટા સ્ટ્રક્ચર રિટર્ન કરે છે. ઉપયોગી છે જો તમે તમારી રેન્ડર મેથડમાં ચિલ્ડ્રનનું collections બદલવા માંગો છો, ખાસ કરીને તેને નીચે પસાર કરતા પહેલા જો તમે `this.props.ચિલ્ડ્રન`ને રિઑર્ડર અથવા કટકા કરો છો.
 
-> Note:
+> નોંધ:
 >
-> `React.ચિલ્ડ્રન.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of ચિલ્ડ્રન. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
+> નેસ્ટેડ એરેની સિમેન્ટિક્સ સાચવવા માટે `React.ચિલ્ડ્રન.toArray()` કી માં ફેરફાર કરે છે જ્યારે ચિલ્ડ્રનના લિસ્ટને ફ્લેટ કરે છે. એટલે કે, `toArray` રીટર્નડ એરેમાં દરેક કીને પ્રીફીક્સ કરે છે જેથી દરેક elements ની કી તેમાં રહેલા ઇનપુટ એરેમાં સ્કોપ થઈ જાય.
 
 * * *
 
 ### `React.ફ્રેગમેન્ટ્` {#reactfragment}
 
-The `React.ફ્રેગમેન્ટ્` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
+`React.ફ્રેગમેન્ટ્` component તમને વધારાના DOM element બનાવ્યા વિના `render()` મેથડમાં મલ્ટિપલ elements રિટર્ન કરે છે:
 
 ```javascript
 render() {
@@ -291,51 +291,51 @@ render() {
 }
 ```
 
-You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for ફ્રેગમેન્ટ્સ](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
+તમે શોર્ટહેન્ડ સિન્ટેક્સ `<></>` સાથે પણ તેનો ઉપયોગ કરી શકો છો. વધુ માહિતી માટે, [React v16.2.0: ફ્રેગમેન્ટ્સ માટે સુધારેલ સપોર્ટ](/blog/2017/11/28/react-v16.2.0-fragment-support.html) જુઓ.
 
 
 ### `React.createRef` {#reactcreateref}
 
-`React.createRef` creates a [ref](/docs/refs-and-the-dom.html) that can be attached to React elements via the ref attribute.
+`React.createRef` એક [રેફ](/docs/refs-and-the-dom.html) બનાવે છે જે રેફ એટ્રિબ્યુટ દ્વારા React elements સાથે જોડાયેલ હોઈ શકે છે.
 `embed:16-3-release-blog-post/create-ref-example.js`
 
 ### `React.forwardRef` {#reactforwardref}
 
-`React.forwardRef` creates a React component that forwards the [ref](/docs/refs-and-the-dom.html) attribute it receives to another component below in the tree. This technique is not very common but is particularly useful in two scenarios:
+`React.forwardRef` એ એક React component બનાવે છે જે [રેફ](/docs/refs-and-the-dom.html) એટ્રિબ્યુટ આગળ તેને ટ્રીના બીજા component માં પ્રાપ્ત કરે છે. આ તકનીક ખૂબ સામાન્ય નથી પરંતુ ખાસ કરીને બે દૃશ્યોમાં ઉપયોગી છે:
 
-* [Forwarding refs to DOM components](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
-* [Forwarding refs in higher-order-components](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
+* [DOM components ને રેફસ ફોરવર્ડ કરવું](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
+* [ઉચ્ચ ક્રમ component માં રેફસ ફોરવર્ડ કરવું](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
-`React.forwardRef` accepts a rendering function as an argument. React will call this function with `props` and `ref` as two arguments. This function should return a React node.
+`React.forwardRef` એ એક રેન્ડરીંગ ફંકશનને એક આર્ગ્યુમેન્ટ તરીકે સ્વીકારે છે. React આ ફંકશન `props` અને `રેફ` સાથે બે આર્ગ્યુમેન્ટસની જેમ કોલ કરે છે. આ ફંકશન એક React node રિટર્ન કરવું જોઈએ.
 
 `embed:reference-react-forward-ref.js`
 
-In the above example, React passes a `ref` given to `<FancyButton ref={ref}>` element as a second argument to the rendering function inside the `React.forwardRef` call. This rendering function passes the `ref` to the `<button ref={ref}>` element.
+ઉપરના ઉદાહરણમાં, React એ `React.forwardRef` કોલની અંદર રેન્ડરિંગ ફંક્શનના બીજા આર્ગ્યુમેન્ટ તરીકે `<FancyButton ref={ref}>` element ને આપવામાં આવેલ એક `રેફ` પાસ કરે છે. આ રેન્ડરિંગ ફંક્શન `<button ref={ref}>` element ને `રેફ` પાસ કરે છે.
 
-As a result, after React attaches the ref, `ref.current` will point directly to the `<button>` DOM element instance.
+પરિણામ સ્વરૂપ, React રેફને જોડ્યા પછી, `રેફ.કરંટ` સીધું `<button>` DOM element ઇન્સટાન્સને પોઇન્ટ કરે છે.
 
-For more information, see [forwarding refs](/docs/forwarding-refs.html).
+વધુ માહિતી માટે, જુઓ [ફોરવર્ડિંગ રેફસ](/docs/forwarding-refs.html).
 
 ### `React.lazy` {#reactlazy}
 
-`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render.
+`React.lazy()` તમને એક component નિર્ધારિત કરવા દે છે જે ડાયનામિકલી લોડ થયા  છે. આ લોડ કરવામાં વિલંબ કરતા components ની બંડલ સાઈઝ ઘટાડવામાં મદદ કરે છે જે પ્રારંભિક રેન્ડર દરમિયાન ઉપયોગમાં નહિ આવ્યા.
 
-You can learn how to use it from our [code splitting documentation](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+તમે અમારા [કોડ સ્પ્લિટિંગ માર્ગદર્શિકા](/docs/code-splitting.html#reactlazy)માંથી તેનો ઉપયોગ કેવી રીતે કરવો તે શીખી શકો છો. તમે વધુ વિગતવાર તેનો ઉપયોગ કેવી રીતે કરવો તે સમજવા [આ લેખ](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) પણ ચકાસી શકો છો.
 
 ```js
 // This component is loaded dynamically
 const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ```
 
-Note that rendering `lazy` components requires that there's a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
+નોંધ લો કે `lazy` components રેન્ડર કરવા માટે એક `<React.Suspense>` component રેન્ડરીંગ ટ્રીમાં હાયર હોવું જોઈએ. આ રીતે તમે લોડિંગ ઈન્ડીકેટરનો ઉલ્લેખ કરો છો.
 
-> **Note**
+> **નોંધ**
 >
-> Using `React.lazy`with dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
+> `React.lazy` નો ઉપયોગ ડાયનામિક ઈમ્પોર્ટ સાથે કરવા JS પર્યાવરણમાં Promisesની જરૂર પડે છે. આને IE11 અને નીચેની ઉપર એક પોલીફિલની જરૂર છે.
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` lets you specify the loading indicator in case some components in the tree below it are not yet ready to render. Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
+`React.Suspense` તમને લોડિંગ ઈન્ડીકેટરનો ઉલ્લેખ કરવા આપે છે જો થોડા components ટ્રીમાં નીચે રેન્ડર થવા રેડી ના હોય. આજે, `<React.Suspense>` દ્વારા સપોર્ટ કરતુ યુઝ કેસ lazy લોડિંગ components જ **ફક્ત** છે:
 
 ```js
 // This component is loaded dynamically
@@ -353,10 +353,10 @@ function MyComponent() {
 }
 ```
 
-It is documented in our [code splitting guide](/docs/code-splitting.html#reactlazy). Note that `lazy` components can be deep inside the `Suspense` tree -- it doesn't have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
+તે અમારા [કોડ સ્પ્લિટિંગ માર્ગદર્શિકા](/docs/code-splitting.html#reactlazy) માં ડોકયુમેન્ટેડ છે. નોંધ લો કે `lazy` components `Suspense` ટ્રીમાં ઊંડે હોય  શકે -- તેને તેમાંથી દરેકને લપેટવાની જરૂર નથી. શ્રેષ્ઠ પ્રેક્ટિસ એ છે કે `<Suspense>` એવી જગ્યાએ મુકો જ્યાં તમે લોડિંગ ઈન્ડીકેટરને જોવા માંગો છો, પણ કોડ સ્પ્લિટિંગ કરવા માંગતા હોય ત્યાં `lazy()` યુઝ કરો.
 
-While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
+જ્યારે આ આજે સપોર્ટેડ નથી, પણ ભવિષ્યમાં અમે `Suspense`ને વધુ દૃશ્યો જેવા કે ડેટા ફૅચિંગ હેન્ડલ કરવા આપીશુ. તમે આ વિશે [અમારો રોડમેપ](/blog/2018/11/27/react-16-roadmap.html) વાંચી શકો છો.
 
->Note:
+>નોંધ:
 >
->`React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.
+>`React.lazy()` અને `<React.Suspense>` હજુ સુધી `ReactDOMServer` દ્વારા સપોર્ટેડ નથી. આ એક જાણીતી મર્યાદા છે જે ભવિષ્યમાં ઉકેલાશે.
