@@ -37,11 +37,7 @@ redirect_from:
 
 આપણે શું બનાવવા જઈ રહ્યા છે, એ તમે અહીં જોઈ શકો છો: **[અંતિમ રિઝલ્ટ](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. જો તમને કોડ ન સમજાય, અથવા તમે કોડ ની સિંટેક્ક્ષ થી અપરિચિત હોય, તો ગભરાશો નહીં! આ ટ્યૂટોરિઅલ નો ઉદ્દેશ તમને React અને એની સિંટેક્ક્ષ સમજાવવાંનો  છે.
 
-<<<<<<< HEAD
 ટ્યૂટોરિઅલમાં આગળ વધતા પહેલા અમે તમને શૂન્ય-ચોકડીની રમત ચકાશવાની ભલામણ કરીએ છીએ. તમે એક વિશેષતાની નોંધ લેશો કે, ગૅમ બોર્ડ ની જમણી બાજુએ ક્રમાંકિત યાદી છે. એ યાદી ગૅમમાં લેવાયેલા દરેક પગલાંઓની પૂર્વ-વિગત(history) બતાવશે, અને જેમ ગૅમ આગળ વધશે તેમ તે અપડેટ થતા રહેશે.
-=======
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
->>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 તમે શૂન્ય-ચોકડીની ગૅમ થી પરિચિત થયા બાદ તેને બંધ કરી શકો છો. આપણે આ ટ્યૂટોરિઅલમાં એક સરળ ટેમ્પ્લેટથી શરુ કરીશું. અમારું આગલું પગલું તમને તૈયાર કરવાનું છે જેથી તમે ગૅમ બનાવની શરૂઆત કરી શકો.
 
@@ -174,7 +170,7 @@ JSX comes with the full power of JavaScript. You can put *any* JavaScript expres
 
 The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
 
-## Inspecting the Starter Code {#inspecting-the-starter-code}
+### Inspecting the Starter Code {#inspecting-the-starter-code}
 
 If you're going to work on the tutorial **in your browser,** open this code in a new tab: **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. If you're going to work on the tutorial **locally,** instead open `src/index.js` in your project folder (you have already touched this file during the [setup](#setup-option-2-local-development-environment)).
 
