@@ -10,20 +10,24 @@ next: release-channels.html
 React અને ReactDOM બન્ને હવે CDN પર ઉપલબ્ધ છે.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
 <!-- The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at: -->
 ઉપર આપેલા બન્ને આવૃત્તિઓ ફ્ક્ત ડેવેલોપમેંટ માટે જ છે, અને પ્રોડ્ક્શન માટે યોગ્ય નથી. React ની સંકુચીત અને ઉત્તમ આવૃત્તિ નીચે મુજબ ઉપલબ્ધ છે:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 <!-- To load a specific version of `react` and `react-dom`, replace `16` with the version number. -->
 React અને ReactDOM ની ચોક્ક્સ આવૃત્તિ માટે, ‘16’ ને આવૃત્તિ અંક સાથે બદલો.
+=======
+To load a specific version of `react` and `react-dom`, replace `17` with the version number.
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 
 <!-- ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute} -->
 ### `crossorigin` લાક્ષણીકતા કેમ? {#why-the-crossorigin-attribute}
