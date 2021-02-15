@@ -30,8 +30,12 @@ HTML માં, ફોર્મ એલિમેન્ટ જેમ કે `<inpu
 
 આપણે આ બે પ્રતિક્રિયાને react state "single source of truth" થી જોડી શકીએ. પછી તે React કોમ્પોનેટ જે ફોર્મ ને રેન્ડર કરે છે તે ઉપયોગકર્તાના ઈનપુટ કરવાથી તે ફોર્મમાં શું થાય છે તેને પણ નિયંત્રિત કરે છે. ઈનપુટ ફોર્મ એલિમેન્ટ જેની value આ પ્રકિયા દ્વારા નિયંત્રિત થાય છે તેને "controlled component" કહેવામાં આવે છે..
 
+<<<<<<< HEAD
 ઉદાહરણ તરીકે, જો આપણે પહેલાંના ઉદાહરણ પર જ્યારે નામ સબમિટ કરીએ ત્યારે log દર્શાવવા માંગતા હોય, તો આપણે ફોર્મને controlled component તરીકે લખી શકીએ..
 ```javascript{4,10-12,24}
+=======
+```javascript{4,10-12,21,24}
+>>>>>>> 888d9eae7a33ec1a48c18f28e82c26d048d885be
 class NameForm extends React.Component {
   constructor(props) {
     super(props);

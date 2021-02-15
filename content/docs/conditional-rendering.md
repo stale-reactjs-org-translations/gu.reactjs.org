@@ -158,6 +158,23 @@ ReactDOM.render(
 
 ### કન્ડિશન્લ ઓપરેટર સાથે ઇનલાઇન If-Else {#inline-if-else-with-conditional-operator}
 
+<<<<<<< HEAD
+=======
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      { count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+>>>>>>> 888d9eae7a33ec1a48c18f28e82c26d048d885be
 
 કન્ડિશન્લ એલિમેન્ટ ઇનલાઇન રેન્ડર કરવા માટેની બીજી પદ્ધતિ જાવાસ્ક્રિપ્ટ કન્ડિશન્લ ઓપરેટરનો ઉપયોગ છે [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
