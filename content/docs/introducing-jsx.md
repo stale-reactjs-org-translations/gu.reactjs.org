@@ -181,4 +181,8 @@ const element = {
 
 >**ટિપ:**
 >
+<<<<<<< HEAD
 >અમે તમારા પસંદગીના એડિટર માટે ["babel" language definition](https://babeljs.io/docs/editors) નો ઉપયોગ કરવાની ભલામણ કરીએ છીએ જેથી ES6 અને JSX કોડ બંને યોગ્ય રીતે હાઈલાઈટ થઇ શકે.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
