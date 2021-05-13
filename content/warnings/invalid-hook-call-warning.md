@@ -1,33 +1,33 @@
 ---
-title: Invalid Hook Call Warning
+title: અમાન્ય Hook Call ની ચેતવણી
 layout: single
 permalink: warnings/invalid-hook-call-warning.html
 ---
 
- You are probably here because you got the following error message:
+ તમે કદાચ અહીં છો કારણ કે તમને નીચેનો ભૂલ સંદેશ મળ્યો છે:
 
- > Hooks can only be called inside the body of a function component.
+ > Hooks ફક્ત functional component ની અંદર જ બોલાવી શકાય. 
 
-There are three common reasons you might be seeing it:
+અહીં આ ત્રણ સામાન્ય કારણો છે જેને તમે જોઈ રહ્યાં છો:
 
-1. You might have **mismatching versions** of React and React DOM.
-2. You might be **breaking the [Rules of Hooks](/docs/hooks-rules.html)**.
-3. You might have **more than one copy of React** in the same app.
+1. તમારી પાસે React અને React DOM ના **અલગ અલગ વર્ઝન** હોઈ શકે છે.
+2. તમે કદાચ  **[Hooks ના નિયમો] તોડો છો (/docs/hooks-rules.html)**.
+3. તમારા જોડે કદાચ  **એકથી વધારે React ની કોપી હોઈ શકે છે** એક જ app ની અંદર.
 
-Let's look at each of these cases.
+ચાલો આ દરેક કેસને જોઈએ. 
 
-## Mismatching Versions of React and React DOM {#mismatching-versions-of-react-and-react-dom}
+## React and React DOM ના અલગ અલગ વર્ઝન {#mismatching-versions-of-react-and-react-dom}
 
-You might be using a version of `react-dom` (< 16.8.0) or `react-native` (< 0.59) that doesn't yet support Hooks. You can run `npm ls react-dom` or `npm ls react-native` in your application folder to check which version you're using. If you find more than one of them, this might also create problems (more on that below).
+તમે કદાચ `react-dom` નું વર્ઝન (< 16.8.0) અથવા `react-native` (< 0.59) વાપરતા હસો જે Hooks સપોર્ટ નહીં કરતાં હોય. તમે તમારી એપ્લિકેશન ફોલ્ડરમાં કમાંડ `npm ls react-dom` અથવા `npm ls react-native` ચલાવીને જોઈ શકો છો કે તમે કયું વર્ઝન વાપરો છો. જો તમને એક થી વધારે મળે તો એ પણ પ્રોબ્લેમ કરી શકે છે(વધુ માહિતી નીચે).
 
-## Breaking the Rules of Hooks {#breaking-the-rules-of-hooks}
+## Hooks ના નિયમ તોડવા {#breaking-the-rules-of-hooks}
 
-You can only call Hooks **while React is rendering a function component**:
+તમે હૂકસ નો વપરાશ ત્યારેજ કરી શકો **જયારે React function component રેન્ડર કરતું હોય**:
 
-* ✅ Call them at the top level in the body of a function component.
-* ✅ Call them at the top level in the body of a [custom Hook](/docs/hooks-custom.html).
+* ✅ Functional componenet ની બોડી માં માત્ર સૌથી ઉપર જ hooks ને call કરવો. 
+* ✅ [custom Hook](/docs/hooks-custom.html)ની બોડી માં સૌથી ઉપર જ hooks ને call કરવો.
 
-**Learn more about this in the [Rules of Hooks](/docs/hooks-rules.html).**
+**આના વિષેની વધુ માહિતી [Hooks ના નિયમો](/docs/hooks-rules.html).**
 
 ```js{2-3,8-9}
 function Counter() {
@@ -43,13 +43,13 @@ function useWindowWidth() {
 }
 ```
 
-To avoid confusion, it’s **not** supported to call Hooks in other cases:
+મૂંઝવણ ને ટાળવા, Hooks ને બીજા કેસમાં call કરવા supported **નથી**:
 
-* 🔴 Do not call Hooks in class components.
-* 🔴 Do not call in event handlers.
-* 🔴 Do not call Hooks inside functions passed to `useMemo`, `useReducer`, or `useEffect`.
+* 🔴 Class components માં Hooks ને call કરવા નહીં.
+* 🔴 Event handlers માં Hooks ને call કરવા નહીં.
+* 🔴 Hooks ને functions ની અંદર call ના કરો જે `useMemo`, `useReducer`, or `useEffect` ની અંદર વપરાયા હોય.
 
-If you break these rules, you might see this error.
+જો તમે આ નિયમો તોડસો તો તમને આ error જોવા મળસે. 
 
 ```js{3-4,11-12,20-21}
 function Bad1() {
@@ -78,26 +78,26 @@ class Bad3 extends React.Component {
 }
 ```
 
-You can use the [`eslint-plugin-react-hooks` plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) to catch some of these mistakes.
+તમે [`eslint-plugin-react-hooks` plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) વાપરી શકો છે જે આ ભૂલો શોધવામાં મદદ કરશે. 
 
 >Note
 >
->[Custom Hooks](/docs/hooks-custom.html) *may* call other Hooks (that's their whole purpose). This works because custom Hooks are also supposed to only be called while a function component is rendering.
+>[Custom Hooks](/docs/hooks-custom.html) કદાચ બીજા Hooks ને call કરી શકે છે. (તેમનો મુખ્ય હેતુ જ એ છે). આ કામ કરે છે કારણ કે custom Hooks ત્યારે જ call થાય કે જયારે functional component રેન્ડર થતો હોય. 
 
 
-## Duplicate React {#duplicate-react}
+## નકલી React {#duplicate-react}
 
-In order for Hooks to work, the `react` import from your application code needs to resolve to the same module as the `react` import from inside the `react-dom` package.
+Hooks ને કામ કરવા માટે, તમારી application ના code નું `react` import એ `react-dom` પેકેજના એજ module ના `react` import ને રીસોલ્વ કરતું હોવું જોઈએ.  
 
-If these `react` imports resolve to two different exports objects, you will see this warning. This may happen if you **accidentally end up with two copies** of the `react` package.
+જો આ `react` imports બે અલગ objects ને રીસોલ્વ કરતાં હોય તો, તમે આ warning જોશો. આ કદાચ ત્યારે થઈ શકે જો તમારા પાસે **ભૂલ થી બે કોપી** `react` પેકેજની આવી જાય.
 
-If you use Node for package management, you can run this check in your project folder:
+જો તમે package management માટે node વાપરતા હોય, તો તમે તમારા પ્રોજેક્ટ ફોલ્ડર માં આ ચાલુ કરીને જોઈ શકો છો:
 
     npm ls react
 
-If you see more than one React, you'll need to figure out why this happens and fix your dependency tree. For example, maybe a library you're using incorrectly specifies `react` as a dependency (rather than a peer dependency). Until that library is fixed, [Yarn resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/) is one possible workaround.
+જો તમે એક થી વધારે React જોઈ શકો તો તમારે શા માટે આ બન્યું તે શોધવાની જરૂર પડશે અને dependency tree સુધારવું પડશે. ઉદાહરણ તરીકે, કદાચ તમે વાપરતા હસો એ library `react` ને dependency તરીકે લેતું હસે (peer dependency ની જગ્યાએ). જ્યાં સુધી એ library ફિક્સ ના થાય, [Yarn resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/) એક શક્ય કાર્ય છે.
 
-You can also try to debug this problem by adding some logs and restarting your development server:
+તમે આ સમસ્યા ને debug કરી શકો છો, કેટલાક logs ઉમેરીને અને ફરીથી development server ચાલુ કરીને:
 
 ```js
 // Add this in node_modules/react-dom/index.js
@@ -109,14 +109,14 @@ window.React2 = require('react');
 console.log(window.React1 === window.React2);
 ```
 
-If it prints `false` then you might have two Reacts and need to figure out why that happened. [This issue](https://github.com/facebook/react/issues/13991) includes some common reasons encountered by the community.
+જો એ `false` પ્રિન્ટ કરે તો તેનો અર્થ તમારા પાસે બે Reacts છે અને તમારે શા માટે આવું થયું તે શોધવાની જરૂર છે. [આ issue](https://github.com/facebook/react/issues/13991)માં લોકો દ્વારા મળેલા કેટલાક સામાન્ય કારણો શામેલ છે.
 
-This problem can also come up when you use `npm link` or an equivalent. In that case, your bundler might "see" two Reacts — one in application folder and one in your library folder. Assuming `myapp` and `mylib` are sibling folders, one possible fix is to run `npm link ../myapp/node_modules/react` from `mylib`. This should make the library use the application's React copy.
+આ સમસ્યા ત્યારે પણ આવી શકે છે જ્યારે તમે `npm link` કે તેના જેવુ વાપરો. એ સ્થિતિ માં, તમારું bundler કદાચ બે Reacts "જોઈ" શકે — એક એપ્લિકેશન ફોલ્ડરમાં અને એક one તમારી library ના ફોલ્ડરમાં. એ ધારીને કે `myapp` અને `mylib` એ બાજુ-બાજુ ના ફોલ્ડર્સ છે, એક શક્ય ઉપાય `npm link ../myapp/node_modules/react` ને `mylib` માંથી ચાલુ કરવી. આ library ne એપ્લિકેશનની React કોપી વાપરવાનું કેહશે. 
 
 >Note
 >
->In general, React supports using multiple independent copies on one page (for example, if an app and a third-party widget both use it). It only breaks if `require('react')` resolves differently between the component and the `react-dom` copy it was rendered with.
+>સામાન્ય રીતે, React એકથી વધારે સ્વતંત્ર કોપી એક પેજ પર વાપરવાનું સપોર્ટ કરે છે (ઉદાહરણ તરીકે, જો એક app અને third-party widget બંને વાપરી શકે છે). એ ત્યારેજ ટૂટે છે જ્યારે `require('react')` એ component અને `react-dom`, કે જેનાથી કોપી render થઈ, વચ્ચે અલગ-અલગ રીસોલ્વ કરે.
 
-## Other Causes {#other-causes}
+## બીજા કારણો {#other-causes}
 
-If none of this worked, please comment in [this issue](https://github.com/facebook/react/issues/13991) and we'll try to help. Try to create a small reproducing example — you might discover the problem as you're doing it.
+જો કશું પણ કામ ના કરે તો, મહેરબાની કરીને કમેંટ કરજો [આ issue](https://github.com/facebook/react/issues/13991)અને અમે મદદ કરવાની કોશિસ કરીસું. નાનું ઉદાહરણ બનાવવાનો પ્રયાસ કરો કે જેનાથી આ થયું — તમે સમસ્યા શોધી શકશો જેમ જેમ તમે કરતાં જાઓ.
