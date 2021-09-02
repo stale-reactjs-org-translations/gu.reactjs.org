@@ -43,7 +43,11 @@ React JavaScript Library છે, અને તેથી અમે માની�
 
 >નૉૅધ
 >
+<<<<<<< HEAD
 >આ ગાઇડ, ક્યારેક ઉદાહરણોમાંના કેટલાક નવા JavaScript સિન્ટેક્ષનો ઉપયોગ કરે છે. જો તમે છેલ્લા થોડા વર્ષોમાં JavaScript સાથે કામ કર્યું ન હોય, તો [આ ત્રણ મુદ્દાઓ](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) તમને વધુ પરિચિત બનાવશે.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> a11c2534062bd79cc1e6e34db0e149f928df35bb
 
 
 ## ચાલો, શરુ કરીએ! {#lets-get-started}
