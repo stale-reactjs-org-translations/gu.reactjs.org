@@ -47,9 +47,9 @@ redirect_from:
 
 જો આપ JavaScript રિવ્યુ કરવા માંગતા હોય, તો અમે [આ માર્ગદર્શિકા](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ની ભલામણ કરીએ છીએ. નોંધ લેશો કે, અમે અમુક ES6 -- JavaScriptનું તાજેતરનું વર્ઝનની વિશેષતાઓનો પણ ઉપયોગ કરીશું. અમે આ ટ્યૂટોરિયલમાં [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), અને [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) વિધાનોનો ઉપયોગ કરીશું. તમે  [Babel REPL](babel://es5-syntax-example) ના ઉપયોગ થી ES6 નો કોડ શેમાં કંપાઇલ થાય છે એ ચકાશી શકો છો.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## ટ્યુટોરીયલ માટે સેટઅપ {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+આ ટ્યુટોરીયલ પૂર્ણ કરવાની બે રીત છે: તમે તમારા બ્રાઉઝરમાં કોડ લખી શકો છો, અથવા તમે તમારા કમ્પ્યુટર પર સ્થાનિક વિકાસ વાતાવરણ સેટ કરી શકો છો.
 
 ### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
 
