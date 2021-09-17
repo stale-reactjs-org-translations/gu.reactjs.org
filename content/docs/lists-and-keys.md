@@ -207,7 +207,11 @@ ReactDOM.render(
 
 ### કીઝ માત્ર ભાઈબહેનો વચ્ચે જ અનન્ય હોવું જોઈએ {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 એરેમાં વપરાતી કીઝ તેમના ભાઈબહેનો વચ્ચે અનન્ય હોવી જોઈએ. જો કે તેઓ વૈશ્વિક રીતે અનન્ય હોવા જરૂરી નથી. જ્યારે આપણે બે ભિન્ન એરે પેદા કરીએ છીએ ત્યારે આપણે સમાન કીઝનો ઉપયોગ કરી શકીએ છીએ:
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
