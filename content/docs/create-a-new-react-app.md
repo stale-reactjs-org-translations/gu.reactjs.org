@@ -1,45 +1,45 @@
 ---
 id: create-a-new-react-app
-title: Create a New React App
+title: ન​વો React App બનાવો
 permalink: docs/create-a-new-react-app.html
 redirect_from:
   - "docs/add-react-to-a-new-app.html"
 prev: add-react-to-a-website.html
-next: cdn-links.html
+next: cdn-links.html  
 ---
+શ્રેષ્ઠ વપરાશ અને વિકાસ ના અનુભવ માટે integrated toolchain નો ઉપયોગ કરો.
 
-Use an integrated toolchain for the best user and developer experience.
+આ page કેટલીક લોકપ્રિય React toolchains નુ વર્ણન છે જે નીચે અપેલ​ જેવા કાર્યોમા સહાય કરે છે:
 
-This page describes a few popular React toolchains which help with tasks like:
+* અનેક files અને components ની ગોઠવણ.
+* npm તરફ થી third-party libraries વપર​વા માટે.
+* સામાન્ય ભૂલો ને વહેલી તકે શોધી કાઢવા .
+* Development સમયે CSS અને JS નુ live-editing.
+* Production માટે output નુ optimizing.
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+આ page પર સૂચવેલ toolchains **પ્રારંભ કરવા માટે ગોઠવણીની જરૂર નથી**.
 
-The toolchains recommended on this page **don't require configuration to get started**.
+## તમને કોઈ toolchain ની જરૂર નથી {#you-might-not-need-a-toolchain}
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+જો તમે ઉપર વર્ણવેલ સમસ્યાઓનો અનુભવ કરતા નથી અથવા JavaScript tools નો ઉપયોગ કરીને હજી સુધી આરામદાયક નથી અનુભવતા, તો [React ને plain `<script>` tag તરિકે HTML page મા ઉમેરો ](/docs/add-react-to-a-website.html)અથ​વા [JSX સાથે ](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+આ **વર્તમાન Website મા React ને એકીકૃત સૌથી સહેલો રસ્તો છે.** જો તમને મદદરૂપ લાગે તો તમે હંમેશાં એક મોટી toolchain ઉમેરી શકો છો!
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+## ભલામણ કરેલ Toolchains {#recommended-toolchains}
 
-## Recommended Toolchains {#recommended-toolchains}
+React ટીમ મુખ્યત્વે આ ઉકેલોની ભલામણ કરે છે:
 
-The React team primarily recommends these solutions:
+- જો તમે **React શીખી રહ્યા છો** અથ​વા **ન​વો  [single-page](/docs/glossary.html#single-page-application) app બનાવી રહ્યા છો,** તો વપરો [React App બનાવો](#create-react-app).
+- જો તમે **Node.js સાથે server-rendered કરેલી website બનાવી રહ્યા છો**, તો [Next.js](#nextjs). નો પ્રયાસ કરો
+- જો તમે **સ્થિર content-oriented website બનાવી રહ્યા છો, તો** [Gatsby](#gatsby) અજમાવો.
+- જો તમે **component library બનાવી રહ્યા છો**  અથવા **અસ્તિત્વમાંના codebase સાથે સંકલન કર​વા**, [More Flexible Toolchains](#more-flexible-toolchains) અજમાવો.
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+### React App બનાવો {#create-react-app}
 
-### Create React App {#create-react-app}
+[Create React App](https://github.com/facebookincubator/create-react-app)  **React શીખવા** માટે આરામદાયક વાતાવરણ છે, અને React મા **નવી [single-page](/docs/glossary.html#single-page-application) Application** બનાવવાનું પ્રારંભ કરવાનો શ્રેષ્ઠ માર્ગ છે
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+તે તમારા development environment સેટ કરે છે જેથી તમે નવીનતમ JavaScript સુવિધાઓનો ઉપયોગ કરી શકો, એક સરસ developer અનુભવ પ્રદાન કરી શકો અને production માટે તમારી એપ્લિકેશનને optimizes કરી શકો. તમારે તમારા machine પર [Node>= 8.10 અને npm>= 5.6](https://nodejs.org/en/) રાખવાની જરૂર પડશે. પ્રોજેક્ટ બનાવવા માટે, ચલાવો:
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 8.10 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
 
 ```bash
 npx create-react-app my-app
@@ -47,48 +47,48 @@ cd my-app
 npm start
 ```
 
->Note
+>નોંધ
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>પ્રથમ લાઇન પરનો `npx` typo નથી -- તે એક [package runner tool છે જે npm 5.2+ સાથે આવે છે](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+React App backend logic અથવા database ને નિયંત્રિત કરતી નથી; તે ફક્ત frontend build pipeline બનાવે છે, જેથી તમે તેનો ઉપયોગ કોઈપણ backend સાથે કરી શકો. hood હેઠળ, તે [Babel](https://babeljs.io/) અને [webpack](https://webpack.js.org/) ઉપયોગ કરે છે, પરંતુ તમારે તેમના વિશે કંઈપણ જાણવાની જરૂર નથી.
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+જ્યારે તમે production deploy કર​વા માટે તૈયાર છો, ત્યારે `npm run build`ચલાવ​વા થી `build` folder મા તમારા app માટે optimized build બન​વી દેશે. તમે React application બનાવવા વિશે વધુ શીખી શકો છો [તેના README માંથી](https://github.com/facebookincubator/create-react-app#create-react-app--) અને તેની [User Guide માંથી](https://facebook.github.io/create-react-app/)
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/) એક React સાથે **static અને server‑rendered applications** સાથે માટે ની એક લોકપ્રિય અને lightweigth framwork છે. તેમાં **styling અને routing solutions** out of the box છે, અને ધારે છે કે તમે [Node.js](https://nodejs.org/) ને server environment તરીકે ઉપયોગ કરી રહ્યાં છો.
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+શીખો Next.js [તેની official guide](https://nextjs.org/learn/) માંથી.
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+React સાથે static website બનાવવાનો શ્રેષ્ઠ માર્ગ [Gatsby](https://www.gatsbyjs.org/) છે. તે તમને React components નો ઉપયોગ કરવા દે છે, પરંતુ ઝડપી લોડ સમયની બાંયધરી આપવા માટે પ્રી રેન્ડર કરેલા HTML અને CSS ને આઉટપુટ આપે છે.
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+શીખો Gatsby [તેની official guide](https://www.gatsbyjs.org/docs/) અથવા [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/) માંથી.
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### વધુ Flexible Toolchains {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+નીચે આપેલ toolchains વધુ સુગમતા અને પસંદગી પ્રદાન કરે છે. અમે તેમને વધુ અનુભવી વપરાશકર્તાઓ માટે ભલામણ કરીએ છીએ:
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)** preset ની સરળતા સાથે [webpack](https://webpack.js.org/) ની શક્તિને જોડે છે, અને તેમાં [React apps](https://neutrinojs.org/packages/react/) અને [React components](https://neutrinojs.org/packages/react-components/) માટેનો preset શામેલ છે.
 
-- **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
+- React, Next.js, [Express](https://expressjs.com/) અને વધુ માટે built-in support સાથે, **[Nx](https://nx.dev/react)** એક full-stack monorepo developmentસ માટે toolkit છે.
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)** એ એક ઝડપી, શૂન્ય રૂપરેખાંકન web application bundler છે જે React સાથે કાર્ય કરે છે.
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Razzle](https://github.com/jaredpalmer/razzle)** એ server-rendering framework છે જેને કોઈ પણ ગોઠવણીની જરૂર નથી, પરંતુ Next.js કરતા વધુ સુગમતા આપે છે.
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## શરૂઆતથી toolchain બનાવવી {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+Javascript build toolchain સામાન્ય રીતે શામેલ છે:
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* [Yarn](https://yarnpkg.com/) અથવા [npm](https://www.npmjs.com/) જેવા **package manager**. તે તમને third-party packages ના વિશાળ ecosystem લાભ લઈ શકે છે અને તેમને સરળતાથી install અથવા update કરી શકે છે.
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* **bundler**, જેમ કે [webpack](https://webpack.js.org/) અથવા [Parcel](https://parceljs.org/). તે તમને modular cod લખવા અને લોડ ટાઇમને optimize કરવા માટે તેને નાના packages bundle કરવા દે છે.
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* [Babel](https://babeljs.io/) જેવા **compiler**. તે તમને આધુનિક JavaScript code લખવા દે છે જે હજી પણ જૂના browsers કાર્ય કરે છે.
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+જો તમે શરૂઆતથી જ Javascript toolchain set કરવાનું પસંદ કરો છો, તો [આ માર્ગદર્શિકા તપાસો](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) કે જે કેટલાક બનાવો React applicationન કાર્યક્ષમતાને ફરીથી બનાવે છે.
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+તમારું custom toolchain [ઉત્પાદન માટે યોગ્ય રીતે સેટ કરેલું છે](/docs/optimizing-performance.html#use-the-production-build) તેની ખાતરી કરવાનું ભૂલશો નહીં.
