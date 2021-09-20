@@ -40,6 +40,10 @@ React ટીમ મુખ્યત્વે આ ઉકેલોની ભલા�
 
 તે તમારા development environment સેટ કરે છે જેથી તમે નવીનતમ JavaScript સુવિધાઓનો ઉપયોગ કરી શકો, એક સરસ developer અનુભવ પ્રદાન કરી શકો અને production માટે તમારી એપ્લિકેશનને optimizes કરી શકો. તમારે તમારા machine પર [Node>= 8.10 અને npm>= 5.6](https://nodejs.org/en/) રાખવાની જરૂર પડશે. પ્રોજેક્ટ બનાવવા માટે, ચલાવો:
 
+<<<<<<< HEAD
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 14.0.0 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> f0a9793dff9f8e86ec365bfadb0b4b23c6f618ce
 
 ```bash
 npx create-react-app my-app
