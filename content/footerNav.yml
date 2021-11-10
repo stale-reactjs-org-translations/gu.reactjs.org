@@ -7,13 +7,13 @@ docs:
 more:
   title: અન્ય
   items:
-    - title: Tutorial
+    - title: ટ્યૂટોરિઅલ
       to: /tutorial/tutorial.html
-    - title: Blog
+    - title: બ્લોગ
       to: /blog
-    - title: Acknowledgements
+    - title: સ્વીકૃતિઓ
       to: /acknowledgements.html
-    - title: React Native
+    - title: રિએક્ટ નેટીવ
       to: https://reactnative.dev/
       external: true
 
