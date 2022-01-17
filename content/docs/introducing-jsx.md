@@ -92,7 +92,7 @@ function getGreeting(user) {
 તમે string લિટરલ્સને અટ્ટ્રીબ્યુટસ તરીકે સ્પેસિફાય કરવા માટે અવતરણ ચિન્હોનો ઉપયોગ કરી શકો છો:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 તમે અટ્ટ્રીબ્યુટમાં JavaScript એક્સપ્રેશનને એમ્બેડ કરવા માટે છગડીયા કૌંસનો પણ ઉપયોગ કરી શકો છો:
@@ -181,4 +181,8 @@ const element = {
 
 >**ટિપ:**
 >
+<<<<<<< HEAD
 >અમે તમારા પસંદગીના એડિટર માટે ["babel" language definition](https://babeljs.io/docs/editors) નો ઉપયોગ કરવાની ભલામણ કરીએ છીએ જેથી ES6 અને JSX કોડ બંને યોગ્ય રીતે હાઈલાઈટ થઇ શકે.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> b9c33a05520ddc728f15c4eb19a343213309f59f
