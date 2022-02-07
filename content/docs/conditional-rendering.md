@@ -154,7 +154,24 @@ ReactDOM.render(
 તે જાવાસ્ક્રિપ્ટમાં કાર્ય કરે છે કારણ કે જાવાસ્ક્રિપ્ટમાં, `true && expression` હંમેશાં "true" `એક્સપ્રેસ્સ્ન` નું મૂલ્યાંકન કરે છે, અને `false && expression` - હંમેશાં "false" નું મૂલ્યાંકન કરે છે.
 
 
+<<<<<<< HEAD
 તેથી, જો સ્થિતિ `true` છે, તો `&&` after પછીનું એલિમેન્ટ આઉટપુટમાં દેખાશે. જો તે `false` છે, તો રિએક્ટ તેને અવગણશે અને જતું કરશે.
+=======
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      { count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+>>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
 
 ### કન્ડિશન્લ ઓપરેટર સાથે ઇનલાઇન If-Else {#inline-if-else-with-conditional-operator}
 
