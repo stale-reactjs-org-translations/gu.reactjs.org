@@ -42,7 +42,7 @@ To render a React element into a root DOM node, pass both to [`ReactDOM.render()
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
 
 તે પેજ પર "Hello, world" દર્શાવે છે.
 
@@ -60,7 +60,7 @@ With our knowledge so far, the only way to update the UI is to create a new elem
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
 <<<<<<< HEAD
 તે પ્રત્યેક સેકન્ડે [SetInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) દ્વારા `ReactDOM.render()` ને કૉલ કરે છે.
@@ -82,7 +82,11 @@ It calls [`ReactDOM.render()`](/docs/react-dom.html#render) every second from a 
 
 React DOM એ element અને તેના childrenની સરખામણી તેમની આગળની સ્તિથી સાથે કરે છે, અને DOM ને ઇચ્છિત સ્થિતિમાં લાવવા માટે જરૂરી DOM અપડેટ્સને જ લાગુ કરે છે.
 
+<<<<<<< HEAD
 તમે બ્રાઉઝર ટુલ્સ વડે [છેલ્લા ઉદાહરણને ](codepen://rendering-elements/update-rendered-element) inspect કરી ચકાશી શકો છો.
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 71cc6be6182418dec43b72f2a9ef464619cb7025
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
