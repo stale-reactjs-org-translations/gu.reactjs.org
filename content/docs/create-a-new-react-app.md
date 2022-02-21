@@ -40,6 +40,10 @@ React ટીમ મુખ્યત્વે આ ઉકેલોની ભલા�
 
 તે તમારા development environment સેટ કરે છે જેથી તમે નવીનતમ JavaScript સુવિધાઓનો ઉપયોગ કરી શકો, એક સરસ developer અનુભવ પ્રદાન કરી શકો અને production માટે તમારી એપ્લિકેશનને optimizes કરી શકો. તમારે તમારા machine પર [Node>= 8.10 અને npm>= 5.6](https://nodejs.org/en/) રાખવાની જરૂર પડશે. પ્રોજેક્ટ બનાવવા માટે, ચલાવો:
 
+<<<<<<< HEAD
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 14.0.0 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 ```bash
 npx create-react-app my-app
@@ -75,7 +79,11 @@ React સાથે static website બનાવવાનો શ્રેષ્ઠ
 
 - React, Next.js, [Express](https://expressjs.com/) અને વધુ માટે built-in support સાથે, **[Nx](https://nx.dev/react)** એક full-stack monorepo developmentસ માટે toolkit છે.
 
+<<<<<<< HEAD
 - **[Parcel](https://parceljs.org/)** એ એક ઝડપી, શૂન્ય રૂપરેખાંકન web application bundler છે જે React સાથે કાર્ય કરે છે.
+=======
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes/react/).
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** એ server-rendering framework છે જેને કોઈ પણ ગોઠવણીની જરૂર નથી, પરંતુ Next.js કરતા વધુ સુગમતા આપે છે.
 
