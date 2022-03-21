@@ -10,7 +10,11 @@ redirect_from:
 
 ---
 
+<<<<<<< HEAD
 HTML ફોર્મના એલિમેન્ટ, react ના અન્ય DOM એલિમેન્ટથી અલગ કામ કરે છે, કારણ કે ફોર્મ એલિમેન્ટ કુદરતી રીતે થોડી આંતરિક સ્થિતિ ધરાવે છે. ઉદાહરણ તરીકે, સાદા HTML માં આ ફોર્મ એક નામ સ્વીકારે છે:
+=======
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 
 ```html
 <form>
@@ -30,8 +34,12 @@ HTML માં, ફોર્મ એલિમેન્ટ જેમ કે `<inpu
 
 આપણે આ બે પ્રતિક્રિયાને react state "single source of truth" થી જોડી શકીએ. પછી તે React કોમ્પોનેટ જે ફોર્મ ને રેન્ડર કરે છે તે ઉપયોગકર્તાના ઈનપુટ કરવાથી તે ફોર્મમાં શું થાય છે તેને પણ નિયંત્રિત કરે છે. ઈનપુટ ફોર્મ એલિમેન્ટ જેની value આ પ્રકિયા દ્વારા નિયંત્રિત થાય છે તેને "controlled component" કહેવામાં આવે છે..
 
+<<<<<<< HEAD
 ઉદાહરણ તરીકે, જો આપણે પહેલાંના ઉદાહરણ પર જ્યારે નામ સબમિટ કરીએ ત્યારે log દર્શાવવા માંગતા હોય, તો આપણે ફોર્મને controlled component તરીકે લખી શકીએ..
 ```javascript{4,10-12,24}
+=======
+```javascript{4,10-12,21,24}
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -275,7 +283,12 @@ this.setState(partialState);
 ઉપરાંત, `setState()` ઓટોમેટિક હોવાથી,[આંશિક સ્થિતિને વર્તમાન સ્થિતિમાં મર્જ કરે છે](/docs/state-and-lifecycle.html#state-updates-are-merged),આપણે તેને ફક્ત ચેન્જ થયેલા ભાગ સાથે કોલ કરવાની જરૂર હોય છે.
 ## Controlled Input Null Value {#controlled-input-null-value}
 
+<<<<<<< HEAD
 [controlled component](/docs/forms.html#controlled-components) value prop ની કિમંત સ્પષ્ટ કરવી એ વપરાશકર્તાને ઇનપુટ બદલતા અટકાવે છે , જ્યાં સુધી તમે ઇચ્છો નહીં ત્યાં સુધી ઉપયોગકર્તાને ઇનપુટ બદલતા અટકાવે છે. જો તમે `value` ઉલ્લેખિત કરેલ છે, પરંતુ ઇનપુટ હજી પણ સુધારવા યોગ્ય છે, તો તમે આકસ્મિક રીતે ` value ` `undefined`  અથવા `null` પર સેટ કર્યું હશે.
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
 નીચેનો કોડ આ દર્શાવે છે.(આ ઈનપુટ પહેલાથી લોક છે પરંતુ ટૂંક સમયમાં સુધારવા યોગ્ય બનશે..)
 ```javascript
