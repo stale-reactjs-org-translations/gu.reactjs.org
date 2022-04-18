@@ -33,13 +33,14 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<<<<<<< HEAD
 અમે સમગ્ર 'સૂચિબદ્ધ' એરેને `<ul>` element અંતર્ગત શામેલ કરીએ છીએ અને તેને [DOM માં render કરીએ છીએ ](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+=======
+Then, we can include the entire `listItems` array inside a `<ul>` element:
+>>>>>>> 07dbd86ca421c262157af673a2584a40fd3b2450
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**કોડપેન પર પ્રયત્ન કરો**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -64,10 +65,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 જ્યારે તમે આ કોડ ચલાવો છો, ત્યારે તમને ચેતવણી આપવામાં આવશે કે સૂચિ વસ્તુઓ માટે કી પ્રદાન કરવી જોઈએ. "કી" વિશિષ્ટ શબ્દ લક્ષણ છે જે તમારે elements ની સૂચિ બનાવતી વખતે શામેલ કરવાની જરૂર છે. અમે ચર્ચા કરીશું કે આગલા વિભાગમાં શા માટે મહત્વપૂર્ણ છે.
@@ -86,12 +85,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**કોડપેન પર પ્રયત્ન કરો**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -165,12 +158,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **ઉદાહરણ: યોગ્ય કી વપરાશ**
@@ -193,12 +180,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**કોડપેન પર પ્રયત્ન કરો**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -207,7 +188,11 @@ ReactDOM.render(
 
 ### કીઝ માત્ર ભાઈબહેનો વચ્ચે જ અનન્ય હોવું જોઈએ {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 એરેમાં વપરાતી કીઝ તેમના ભાઈબહેનો વચ્ચે અનન્ય હોવી જોઈએ. જો કે તેઓ વૈશ્વિક રીતે અનન્ય હોવા જરૂરી નથી. જ્યારે આપણે બે ભિન્ન એરે પેદા કરીએ છીએ ત્યારે આપણે સમાન કીઝનો ઉપયોગ કરી શકીએ છીએ:
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> 07dbd86ca421c262157af673a2584a40fd3b2450
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -239,10 +224,9 @@ const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**કોડપેન પર પ્રયત્ન કરો**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
