@@ -51,17 +51,17 @@ redirect_from:
 
 આ ટ્યુટોરીયલ પૂર્ણ કરવાની બે રીત છે: તમે તમારા બ્રાઉઝરમાં કોડ લખી શકો છો, અથવા તમે તમારા કમ્પ્યુટર પર સ્થાનિક વિકાસ વાતાવરણ સેટ કરી શકો છો.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### સેટઅપ વિકલ્પ 1: બ્રાઉઝરમાં કોડ લખો {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+શરૂઆત કરવાની આ સૌથી ઝડપી રીત છે!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
+પહેલા, નવી ટેબ મા આ  **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** ખોલો. નવી ટેબ મા ખાલી શૂન્ય-ચોકડીની ગૅમ નુ બોર્ડ અને React code દેખાશે.આપણે આ ટ્યૂટોરિઅલ મા React code મા ફેરફાર કરીશુ.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+તમે સેટઅપ નો બીજો વિકલ્પ અવગણી શકો છો, અને React નુ અવલોકન કરવા માટે [Overview](#overview) વિભાગ મા જાઓ.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### સેટઅપ વિકલ્પ 2: લોકલ ડેવલપમેન્ટ વાતાવરણ {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+આ સંપૂર્ણ વૈકલ્પિક છે અને ટ્યૂટોરિઅલ માટે જરૂરી નથી !
 
 <br>
 
