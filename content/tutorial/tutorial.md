@@ -51,58 +51,59 @@ redirect_from:
 
 આ ટ્યુટોરીયલ પૂર્ણ કરવાની બે રીત છે: તમે તમારા બ્રાઉઝરમાં કોડ લખી શકો છો, અથવા તમે તમારા કમ્પ્યુટર પર સ્થાનિક વિકાસ વાતાવરણ સેટ કરી શકો છો.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### સેટઅપ વિકલ્પ 1: બ્રાઉઝરમાં કોડ લખો {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+પ્રારંભ કરવાની આ સૌથી ઝડપી રીત છે!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+પ્રથમ, આ **[સ્ટાર્ટર કોડ](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** ને નવી ટેબમાં ખોલો. નવી ટેબમાં ખાલી ટિક-ટેક-ટો ગેમ બોર્ડ અને પ્રતિક્રિયા કોડ દર્શાવવો જોઈએ. અમે આ ટ્યુટોરીયલમાં પ્રતિક્રિયા કોડને સંપાદિત કરીશું.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+તમે હવે બીજા સેટઅપ વિકલ્પને છોડી શકો છો, અને પ્રતિક્રિયાની ઝાંખી મેળવવા માટે [ઓવરવ્યૂ](#ઓવરવ્યુ) વિભાગ પર જઈ શકો છો.
 
-This is completely optional and not required for this tutorial!
+### સેટઅપ વિકલ્પ 2:  {#setup-option-2-local-development-environment}
+
+આ સંપૂર્ણપણે વૈકલ્પિક છે અને આ ટ્યુટોરીયલ માટે જરૂરી નથી!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>વૈકલ્પિક: તમારા મનપસંદ ટેક્સ્ટ એડિટરનો ઉપયોગ કરીને સ્થાનિક રીતે અનુસરવા માટેની સૂચનાઓ</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+આ સેટઅપ માટે વધુ કાર્યની જરૂર છે પરંતુ તમને તમારી પસંદગીના સંપાદકનો ઉપયોગ કરીને ટ્યુટોરીયલ પૂર્ણ કરવાની મંજૂરી આપે છે. અહીં અનુસરવા માટેનાં પગલાં છે:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. ખાતરી કરો કે તમારી પાસે [Node.js](https://nodejs.org/en/) નું તાજેતરનું સંસ્કરણ ઇન્સ્ટોલ કરેલું છે.
+2. નવો પ્રોજેક્ટ બનાવવા માટે [ક્રિએટ રિએક્ટ એપ્લિકેશન માટે ઇન્સ્ટોલેશન સૂચનાઓ](/docs/create-a-new-react-app.html#create-react-app) ને અનુસરો.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3.નવા પ્રોજેક્ટના `src/` ફોલ્ડરમાંની બધી ફાઇલો કાઢી નાખો
 
-> Note:
+> નૉૅધ:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**આખું `src` ફોલ્ડર કાઢી નાખશો નહીં, ફક્ત તેની અંદરની મૂળ સ્રોત ફાઇલો.** અમે આગલા પગલામાં આ પ્રોજેક્ટ માટેના ઉદાહરણો સાથે ડિફૉલ્ટ સ્રોત ફાઇલોને બદલીશું.
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# જો તમે Mac અથવા Linux નો ઉપયોગ કરી રહ્યાં છો:
 rm -f *
 
-# Or, if you're on Windows:
+# અથવા, જો તમે Windows પર છો:
 del *
 
-# Then, switch back to the project folder
+# પછી, પ્રોજેક્ટ ફોલ્ડર પર પાછા સ્વિચ કરો
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. [આ CSS કોડ](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) સાથે `src/` ફોલ્ડરમાં `index.css` નામની ફાઇલ બનાવો.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. [આ JS કોડ](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) સાથે `src/` ફોલ્ડરમાં `index.js` નામની ફાઇલ બનાવો.
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. આ 3 લીટીઓ `src/` ફોલ્ડરમાં `index.js` ની ટોચ પર ઉમેરો:
 
 ```js
 import React from 'react';
@@ -110,15 +111,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+હવે જો તમે પ્રોજેક્ટ ફોલ્ડરમાં `npm start` ચલાવો છો અને બ્રાઉઝરમાં `http://localhost:3000` ખોલો છો, તો તમારે ખાલી tic-tac-toe ફીલ્ડ જોવું જોઈએ.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+અમે તમારા સંપાદક માટે સિન્ટેક્સ હાઇલાઇટિંગને ગોઠવવા માટે [આ સૂચનાઓ](https://babeljs.io/docs/editors/) ને અનુસરવાની ભલામણ કરીએ છીએ.
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### મદદ કરો, હું અટકી ગયો છું! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+જો તમે અટવાઈ જાઓ, તો [સમુદાય સમર્થન સંસાધનો](/community/support.html) તપાસો. ખાસ કરીને, [Reactiflux Chat](https://discord.gg/reactiflux) ઝડપથી મદદ મેળવવાની એક સરસ રીત છે. જો તમને જવાબ ન મળે, અથવા જો તમે અટવાયેલા રહેશો, તો કૃપા કરીને એક સમસ્યા ફાઇલ કરો, અને અમે તમને મદદ કરીશું.
 
 ## Overview {#overview}
 
